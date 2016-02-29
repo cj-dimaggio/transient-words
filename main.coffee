@@ -26,7 +26,7 @@ update_stats = () ->
   chars = input.value.length
   words = input.value.split(" ").length
   wpm = 60 * words  // (session_length - time_left)
-  if time_left % 1 < .1 then last_wpm = wpm
+  if time_left % 1 <= .1 then last_wpm = wpm
   else wpm = last_wpm
   document.getElementById('stats').innerHTML = "#{chars}c #{words}w #{wpm}wpm"
 
