@@ -6,6 +6,8 @@ input = document.getElementById('input')
 run = false
 tock = null
 
+valid_keys = /Digit.|Key.|Space|Backspace|Bracket.+|Enter|Semicolon|Quote|Backquote|Backslash|Comma|Period|Slash|Numpad.+/
+
 kill = 5
 fade = 2
 
@@ -46,7 +48,8 @@ tick = () ->
     input.style.opacity = 1 - perc
     document.body.style.boxShadow = "inset 0px 0px #{Math.floor(100 * perc)}px 0px rgba(242, 77, 77, #{perc * .7})"
 
-stroke = () ->
+stroke = (e) ->
+  if not e.code.match valid_keys then return
   time_since_stroke = 0
   if not run
     run = true
