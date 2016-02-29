@@ -29,12 +29,12 @@ update_stats = () ->
   document.getElementById('stats').innerHTML = "#{chars}c #{words}w #{wpm}wpm"
 
 die = () ->
+  words = input.value.split(" ").length
+  time = format_time(session_length - time_left)
   input.value = ''
   input.placeholder = ""
   clearInterval(tock)
   run = false
-  words = input.value.split(" ").length
-  time = format_time(session_length - time_left)
   document.getElementById('tweet').href = "https://twitter.com/intent/tweet?text=I+wrote+#{words}+words+in+#{time}+minutes+-+and+then+I+died+using+The+Most+Dangerous+Writing+App+%23MDWA&url=http%3A%2F%2Fwww.themostdangerouswritingapp.com"
   document.getElementById('tweet').innerHTML = "I wrote #{words} words in #{time} minutes - and then I died using The Most Dangerous Writing App #MDWA"
   show 'die'
