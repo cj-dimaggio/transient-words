@@ -5,7 +5,7 @@ time_div = document.getElementById('time')
 input = document.getElementById('input')
 run = false
 tock = null
-
+last_wpm = 0
 valid_keys = /Digit.|Key.|Space|Backspace|Bracket.+|Enter|Semicolon|Quote|Backquote|Backslash|Comma|Period|Slash|Numpad.+/
 valid_key_codes = [13, 32, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 186, 187, 188, 189, 190, 191, 222]
 
@@ -26,6 +26,8 @@ update_stats = () ->
   chars = input.value.length
   words = input.value.split(" ").length
   wpm = 60 * words  // (session_length - time_left)
+  if time_left % 1 < .1 then last_wpm = wpm
+  else wpm = last_wpm
   document.getElementById('stats').innerHTML = "#{chars}c #{words}w #{wpm}wpm"
 
 die = () ->
