@@ -88,7 +88,7 @@ start = ->
   hide 'logo'
   hide 'start'
   hide 'win_button'
-  # fullscreen document.body
+  # fullscreen document.getElementById('content')
   input.focus()
 
 document.getElementById("show_help").onclick = -> show 'help'
