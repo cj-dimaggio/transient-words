@@ -80,7 +80,7 @@ body {
     width: 400px;
     padding: 20px;
     position: absolute;
-    top: calc(50% - 125px);
+    top: calc(50% - 175px);
     left: calc(50% - 220px);
     background: #383030;
     color: #FFFCEF;
@@ -143,7 +143,7 @@ body {
     }
 #help a:hover
     {
-    color: #89D2D3;
+    color: #4796C2;
     }
 
 #start .radios
@@ -155,11 +155,27 @@ body {
     {
     display: none;
     }
+#author
+    {
+    position: absolute;
+    bottom: -30px;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    color: #383030;
+    }
+#author a { color: #383030; }
+#author a:hover { color: #4796C2; }
 .instructions
     {
     margin: 20px 0;
     text-align: center;
     font-size: 16pt;
+    }
+.instructions.darker
+    {
+    opacity: .5;
+    font-size: 12pt;
     }
 #start input[type=radio] + label
     {
