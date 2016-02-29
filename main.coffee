@@ -8,14 +8,18 @@ tock = null
 
 valid_keys = /Digit.|Key.|Space|Backspace|Bracket.+|Enter|Semicolon|Quote|Backquote|Backslash|Comma|Period|Slash|Numpad.+/
 
-kill = 5
-fade = 2
 
-update_clock = () ->
+kill = 5
+fade = 3
+
+format_time = (time) ->
   dd = (time) ->
     result = '' + Math.floor(time)
     if result.length == 1 then return '0' + result else return result
-  time_div.innerHTML = "#{dd(time_left // 60)}:#{dd(time_left % 60)}"
+  return "#{dd(time // 60)}:#{dd(time % 60)}"
+
+update_clock = () ->
+  time_div.innerHTML = format_time(time_left)
 
 update_stats = () ->
   chars = input.value.length
@@ -28,6 +32,10 @@ die = () ->
   input.placeholder = ""
   clearInterval(tock)
   run = false
+  words = input.value.split(" ").length
+  time = format_time(session_length - time_left)
+  document.getElementById('tweet').href = "https://twitter.com/intent/tweet?text=I+wrote+#{words}+words+in+#{time}+minutes+-+and+then+I+died+using+The+Most+Dangerous+Writing+App+%23MDWA&url=http%3A%2F%2Fwww.mostdangerouswritingapp.com"
+  document.getElementById('tweet').innerHTML = "I wrote #{words} words in #{time} minutes - and then I died using The Most Dangerous Writing App #MDWA"
   show 'die'
   show 'logo'
 
@@ -91,10 +99,9 @@ start = ->
   # fullscreen document.getElementById('content')
   input.focus()
 
-document.getElementById("show_help").onclick = -> show 'help'
-document.getElementById("hide_help").onclick = -> hide 'help'
 
-document.getElementById("retry_button").onclick = ->
+retry = ->
+  console.log("qwe")
   document.getElementById('stats').innerHTML = ''
   document.body.style.boxShadow = 'none'
   hide 'time'
@@ -105,3 +112,8 @@ document.getElementById("retry_button").onclick = ->
 document.getElementById("start_button").onclick = ->
   session_length = parseInt((el for el in document.getElementsByClassName('select_time') when el.checked)[0].value)
   start()
+
+document.getElementById("show_help").onclick = -> show 'help'
+document.getElementById("hide_help").onclick = -> hide 'help'
+document.getElementById("retry_button").onclick = retry
+document.getElementById("win_button").onclick = retry
