@@ -52,9 +52,10 @@
         {
         color: #F25757;
         text-transform: uppercase;
-        background-size: 19px 19px;
         height: 20px;
-        padding-left: 24px;
+        position: absolute;
+        top: 22px;
+        width: 100%;
         line-height: 20px;
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-weight: 300;
@@ -83,7 +84,7 @@
         height: 20px;
         margin-bottom: 20px;
         }
-    #status_lower { color: #dddddd; }
+    #status_lower { color: #e0dddd; }
     #win_button
         {
         display: none;
@@ -111,27 +112,30 @@
         width: 400px;
         padding: 20px;
         position: absolute;
-        top: calc(50% - 200px);
+        top: calc(50% - 125px);
         left: calc(50% - 220px);
-        background: #89D2D3;
+        background: #383030;
         color: #FFFCEF;
         }
     #die
         {
+        top: calc(50% - 90px);
         background: #F25757;
         display: none;
         }
     #help
         {
+        margin-top: -1px;
         background: #FFFCEF;
+        top: calc(50% - 180px);
         display: none;
-        color: #444;
+        color: #383030;
         /*display: none;*/
         }
 
     #help a 
         {
-        color: #444;
+        color: #383030;
         text-decoration: underline;
         }
     #help a:hover
@@ -180,12 +184,12 @@
         background: none;
         padding: 10px 20px;
         display: block;
-        margin: 20px auto 0px auto;
+        margin: 20px auto 20px auto;
         outline: none;
         }
     #start_button:hover {
         background: #FFFCEF;
-        color: #89D2D3;
+        color: #383030;
     }
     #retry_button:hover {
         background: #FFFCEF;
@@ -193,13 +197,14 @@
     }
     #hide_help
         {
-        color: #222;
-        border-color: #222;
+        margin-top: 40px;
+        color: #383030;
+        border-color: #383030;
         }
     #hide_help:hover
         {
         color: #FFFCEF;
-        background: #222;
+        background: #383030;
         }
     .subtitle
         {
@@ -244,7 +249,7 @@
         <div id="logo" class="logo">The Most Dangerous Writing App</div>
         <div id="status">
             <button id="win_button">Win! Retry?</button>
-            <div id="time">5:00</div>
+            <div id="time"></div>
         </div>
         <textarea id='input' disabled></textarea>
         <div id="status_lower">

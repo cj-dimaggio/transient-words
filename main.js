@@ -49,14 +49,15 @@
     input.placeholder = "";
     clearInterval(tock);
     run = false;
-    return show('die');
+    show('die');
+    return show('logo');
   };
 
   win = function() {
     clearInterval(tock);
     run = false;
     show('win_button');
-    return time_div.style.display = "none";
+    return hide('time');
   };
 
   tick = function() {
@@ -140,7 +141,9 @@
   };
 
   document.getElementById("retry_button").onclick = function() {
+    document.getElementById('stats').innerHTML = '';
     document.body.style.boxShadow = 'none';
+    hide('time');
     show('start');
     hide('die');
     return input.disabled = true;

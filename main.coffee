@@ -29,12 +29,13 @@ die = () ->
   clearInterval(tock)
   run = false
   show 'die'
+  show 'logo'
 
 win = () ->
   clearInterval(tock)
   run = false
   show 'win_button'
-  time_div.style.display = "none"
+  hide 'time'
 
 tick = () ->
   time_left -= 0.1
@@ -94,7 +95,9 @@ document.getElementById("show_help").onclick = -> show 'help'
 document.getElementById("hide_help").onclick = -> hide 'help'
 
 document.getElementById("retry_button").onclick = ->
+  document.getElementById('stats').innerHTML = ''
   document.body.style.boxShadow = 'none'
+  hide 'time'
   show 'start'
   hide 'die'
   input.disabled = true
