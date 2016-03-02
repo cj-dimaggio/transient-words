@@ -244,6 +244,7 @@ textarea
     line-height: 160%;
     font-size: 16pt;
     background: none;
+    resize: none;
     }
 button.text, a.text
     {
