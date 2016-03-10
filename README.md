@@ -5,7 +5,9 @@
 > The Most Dangerous Writing App is designed to get you into a state of flow.
 > If you stop typing for more than five seconds, all progress will be lost.
 
-![How to use MDWA in a bougie coffee shop](http://cdn1.tnwcdn.com/wp-content/blogs.dir/1/files/2016/03/Writing-app.jpg)
+![Hero Shot](http://cdn1.tnwcdn.com/wp-content/blogs.dir/1/files/2016/03/Writing-app.jpg)
+
+(Image by [lifehacker](http://lifehacker.com/the-most-dangerous-writing-app-destroys-your-progress-1762981262))
 
 ### What people say:
 
