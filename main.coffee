@@ -10,6 +10,10 @@ last_wpm = 0
 valid_keys = /Digit.|Key.|Space|Bracket.+|Enter|Semicolon|Quote|Backquote|Backslash|Comma|Period|Slash|Numpad.+/
 valid_key_codes = [13, 32, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 186, 187, 188, 189, 190, 191, 222]
 
+key_replace = {96: "0", 97: "1", 98: "2", 99: "3", 100: "4", 101: "5", 102: "6", 103: "7", 104: "8", 105: "9", 106: "*", 107: "+", 109: "-", 110: ".", 111: "/", 186: ";", 187: "=", 188: ",", 189: "-", 190: ".", 191: "/", 222: "'"}
+shift_replace = {",": "<", ".": ">", "/": "?", ";": ":", "'": "\"", "1": "!", "2": "@", "3": "#", "4": "$", "5": "%", "6": "^", "7": "&", "8": "*", "9": "(", "0": ")", "-": "_", "=": "+"}
+
+
 hardcore_mode = false
 
 kill = 5
@@ -59,7 +63,7 @@ tick = () ->
   update_clock()
   update_stats()
   if hardcore_mode
-    hardcore.style.opacity = Math.max(0, 1 - 2 * time_since_stroke)
+    hardcore.style.opacity = if time_since_stroke > .1 then 0 else 1
   if time_left <= 0 then win()
   else if time_since_stroke > kill then die()
   else if time_since_stroke > fade
@@ -67,13 +71,26 @@ tick = () ->
     input.style.opacity = 1 - perc
     document.body.style.boxShadow = "inset 0px 0px #{Math.floor(100 * perc)}px 0px rgba(242, 77, 77, #{perc * .7})"
 
+keyFromCharCode = (charCode, shift) ->
+  if key_replace.hasOwnProperty charCode
+    char = key_replace[charCode]
+  else if 48 <= charCode <= 90
+    char = String.fromCharCode charCode
+    if not shift
+      char = char.toLowerCase()
+  else char = ""
+  if shift and shift_replace.hasOwnProperty char
+    char = shift_replace[char]
+  return char
+
 stroke = (e) ->
   evt = evt || window.event
   charCode = evt.keyCode || evt.which
   if charCode and charCode not in valid_key_codes then return
   if e.code and not e.code.match valid_keys then return
   if hardcore
-    hardcore.innerHTML = String.fromCharCode charCode
+    hardcore.innerHTML = keyFromCharCode charCode, evt.shiftKey
+
   time_since_stroke = 0
   if not run
     run = true
@@ -126,7 +143,6 @@ start = ->
 
 
 retry = ->
-  console.log("qwe")
   get('stats').innerHTML = ''
   document.body.style.boxShadow = 'none'
   hide 'time'
