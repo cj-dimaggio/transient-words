@@ -43,6 +43,51 @@ body {
     vertical-align: middle;
     }
 
+#hardcore
+    {
+    font-size: 300pt;
+    font-family: Inconsolata, "Courier New", Courier, monospace;
+    text-align: center;
+    color: rgb(26, 26, 26);
+    font-family: Inconsolata, "Courier New", Courier, monospace;
+    width: 100%;
+    max-width: 600px;
+    position: absolute;
+    height: calc(100% - 60px);
+    margin: 0px auto;
+    box-sizing: border-box;
+    pointer-events: none;
+    }
+
+.hardcore_check
+    {
+    text-align: center;
+    font-size: 12pt;
+    }
+.hardcore_check label { cursor: pointer; }
+#hardcore_mode
+    {
+    cursor: pointer;
+    background: none;
+    margin-right: 10px;
+    visibility: hidden;
+    }
+#hardcore_mode:before
+    {
+    content: "";
+    visibility: visible;
+    width: 13px;
+    height: 13px;
+    margin-top: -2px;
+    border: 1px solid white;
+    display: inline-block;
+    position: absolute;
+    }
+#hardcore_mode:checked:before
+    {
+    background: white;
+    box-shadow: inset 0px 0px 0px 2px #383030;
+    }
 #status, #status_lower
     {
     color: rgb(120, 120, 120);
@@ -245,6 +290,13 @@ textarea
     font-size: 16pt;
     background: none;
     resize: none;
+    }
+textarea.hardcore
+    {
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    filter: blur(20px);
     }
 button.text, a.text
     {

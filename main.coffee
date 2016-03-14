@@ -3,12 +3,14 @@ time_left = session_length
 time_since_stroke = 0
 time_div = document.getElementById('time')
 input = document.getElementById('input')
+hardcore = document.getElementById('hardcore')
 run = false
 tock = null
 last_wpm = 0
 valid_keys = /Digit.|Key.|Space|Bracket.+|Enter|Semicolon|Quote|Backquote|Backslash|Comma|Period|Slash|Numpad.+/
 valid_key_codes = [13, 32, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 186, 187, 188, 189, 190, 191, 222]
 
+hardcore_mode = false
 
 kill = 5
 fade = 3
@@ -45,6 +47,9 @@ die = () ->
 win = () ->
   clearInterval(tock)
   run = false
+  if hardcore_mode
+    hide 'hardcore'
+    input.className = ""
   show 'win_button'
   hide 'time'
 
@@ -53,6 +58,8 @@ tick = () ->
   time_since_stroke += 0.1
   update_clock()
   update_stats()
+  if hardcore_mode
+    hardcore.style.opacity = Math.max(0, 1 - 2 * time_since_stroke)
   if time_left <= 0 then win()
   else if time_since_stroke > kill then die()
   else if time_since_stroke > fade
@@ -61,8 +68,12 @@ tick = () ->
     document.body.style.boxShadow = "inset 0px 0px #{Math.floor(100 * perc)}px 0px rgba(242, 77, 77, #{perc * .7})"
 
 stroke = (e) ->
-  if e.keyCode and e.keyCode not in valid_key_codes then return
+  evt = evt || window.event
+  charCode = evt.keyCode || evt.which
+  if charCode and charCode not in valid_key_codes then return
   if e.code and not e.code.match valid_keys then return
+  if hardcore
+    hardcore.innerHTML = String.fromCharCode charCode
   time_since_stroke = 0
   if not run
     run = true
@@ -79,6 +90,9 @@ fullscreen = (el) ->
   else if el.webkitRequestFullscreen then el.webkitRequestFullscreen()
   else if el.msRequestFullscreen then el.msRequestFullscreen()
 
+get = (id) ->
+  document.getElementById id
+
 hide = (id) ->
   el = document.getElementById(id).style.display = 'none'
   document.getElementById('status').style.opacity = 1
@@ -88,6 +102,7 @@ show = (id) ->
 
 start = ->
   input.value = ''
+  hardcore_mode = get('hardcore_mode').checked
   time_div.style.display = 'inline'
   input.disabled = false
   input.style.opacity = 1
@@ -95,18 +110,24 @@ start = ->
   time_left = session_length
   update_clock()
   input.placeholder = "Start typing..."
-  document.getElementById('status').style.opacity = 1
-  document.getElementById('status_lower').style.opacity = 1
+  get('status').style.opacity = 1
+  get('status_lower').style.opacity = 1
   hide 'logo'
   hide 'start'
   hide 'win_button'
+  if hardcore_mode
+    show 'hardcore'
+    input.className = "hardcore"
+  else
+    hide 'hardcore'
+    input.className = ""
   # fullscreen document.getElementById('content')
   input.focus()
 
 
 retry = ->
   console.log("qwe")
-  document.getElementById('stats').innerHTML = ''
+  get('stats').innerHTML = ''
   document.body.style.boxShadow = 'none'
   hide 'time'
   show 'start'
