@@ -13,7 +13,6 @@ valid_key_codes = [13, 32, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 6
 key_replace = {96: "0", 97: "1", 98: "2", 99: "3", 100: "4", 101: "5", 102: "6", 103: "7", 104: "8", 105: "9", 106: "*", 107: "+", 109: "-", 110: ".", 111: "/", 186: ";", 187: "=", 188: ",", 189: "-", 190: ".", 191: "/", 222: "'"}
 shift_replace = {",": "<", ".": ">", "/": "?", ";": ":", "'": "\"", "1": "!", "2": "@", "3": "#", "4": "$", "5": "%", "6": "^", "7": "&", "8": "*", "9": "(", "0": ")", "-": "_", "=": "+"}
 
-
 hardcore_mode = false
 
 kill = 5
@@ -85,10 +84,11 @@ keyFromCharCode = (charCode, shift) ->
   return char
 
 stroke = (e) ->
-  evt = evt || window.event
+  evt = e || window.event
   charCode = evt.keyCode || evt.which
   if charCode and charCode not in valid_key_codes then return
   if e.code and not e.code.match valid_keys then return
+
   if hardcore
     hardcore.innerHTML = keyFromCharCode charCode, evt.shiftKey
 
