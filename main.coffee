@@ -120,7 +120,7 @@ show = (id) ->
 
 start = ->
   input.value = ''
-  hardcore_mode = get('hardcore_mode').checked
+  hardcore_mode = get('hardcore_mode') and get('hardcore_mode').checked
   time_div.style.display = 'inline'
   input.disabled = false
   input.style.opacity = 1
