@@ -29,7 +29,7 @@ update_clock = () ->
 
 update_stats = () ->
   chars = input.value.length
-  words = input.value.split(" ").length
+  words = input.value.split(/\s+/).length - 1
   wpm = 60 * words  // (session_length - time_left)
   if time_left % 1 <= .1 then last_wpm = wpm
   else wpm = last_wpm

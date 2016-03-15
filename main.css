@@ -90,14 +90,13 @@ body {
     }
 #status, #status_lower
     {
-    color: rgb(120, 120, 120);
+    color: rgba(54, 48, 48, .25);
     font-family: Inconsolata, "Courier New", Courier, monospace;        
     font-size: 16pt;
     opacity: 0;
     height: 20px;
     margin-bottom: 20px;
     }
-#status_lower { color: #e0dddd; }
 #win_button
     {
     display: none;
