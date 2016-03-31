@@ -97,20 +97,22 @@ body {
     height: 20px;
     margin-bottom: 20px;
     }
-#win_button
+#win_button, #save_button
     {
     display: none;
     background: none;
     font-family: Inconsolata, "Courier New", Courier, monospace;        
     font-size: 16pt;
+    text-decoration: none;
     padding: 5px 10px;
     float: right;
     border: 1px solid #BADD8B;
     margin-top: -5px;
+    margin-left: 10px;
     color: #BADD8B;
     cursor: pointer;
     }
-#win_button:hover
+#win_button:hover, #save_button:hover
     {
     color: #FFFCEF;
     background: #BADD8B;
@@ -199,7 +201,7 @@ body {
     {
     display: none;
     }
-#author
+.below_container
     {
     position: absolute;
     bottom: -30px;
@@ -208,8 +210,9 @@ body {
     text-align: center;
     color: #383030;
     }
-#author a { color: #383030; }
-#author a:hover { color: #4796C2; }
+#affiliate_mac, #affiliate_ios { bottom: -60px; }
+.below_container a { color: #383030; }
+.below_container a:hover { color: #4796C2; }
 .instructions
     {
     margin: 20px 0;

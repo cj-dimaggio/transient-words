@@ -7,6 +7,9 @@ hardcore = document.getElementById('hardcore')
 run = false
 tock = null
 last_wpm = 0
+is_ios = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream
+is_mac = /Max|OS X/.test(navigator.userAgent) && !window.MSStream
+
 valid_keys = /Digit.|Key.|Space|Bracket.+|Enter|Semicolon|Quote|Backquote|Backslash|Comma|Period|Slash|Numpad.+/
 valid_key_codes = [13, 32, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 186, 187, 188, 189, 190, 191, 222]
 
@@ -36,7 +39,7 @@ update_stats = () ->
   get('stats').innerHTML = "#{chars}c #{words}w #{wpm}wpm"
 
 die = () ->
-  words = input.value.split(" ").length
+  words = input.value.split(/\s+/).length - 1
   time = format_time(session_length - time_left)
   input.value = ''
   input.disabled = true
@@ -47,6 +50,15 @@ die = () ->
   get('tweet').innerHTML = "I wrote #{words} words in #{time} minutes - and then I died using The Most Dangerous Writing App #MDWA"
   show 'die'
   show 'logo'
+  if ga
+    ga 'send', 'event', 'Write', 'die', {
+      "session_length": session_length
+      "time_left": time_left
+      "words": words
+    }
+
+save_link = ->
+  get("save_button").href = "data:application/octet-stream;charset=utf-8;base64," + btoa(input.value)
 
 win = () ->
   clearInterval(tock)
@@ -54,8 +66,15 @@ win = () ->
   if hardcore_mode
     hide 'hardcore'
     input.className = ""
+  save_link()
   show 'win_button'
+  show 'save_button'
   hide 'time'
+  if ga
+    ga 'send', 'event', 'Write', 'win', {
+      "session_length": session_length
+      "words": input.value.split(/\s+/).length - 1
+    }
 
 tick = () ->
   time_left -= 0.1
@@ -133,6 +152,7 @@ start = ->
   hide 'logo'
   hide 'start'
   hide 'win_button'
+  hide 'save_button'
   if hardcore_mode
     show 'hardcore'
     input.className = "hardcore"
@@ -140,6 +160,12 @@ start = ->
     hide 'hardcore'
     input.className = ""
   # fullscreen document.getElementById('content')
+  if ga
+    ga 'send', 'event', 'Write', 'start', {
+      "session_length": session_length
+    }
+
+
   input.focus()
 
 
@@ -159,3 +185,25 @@ document.getElementById("show_help").onclick = -> show 'help'
 document.getElementById("hide_help").onclick = -> hide 'help'
 document.getElementById("retry_button").onclick = retry
 document.getElementById("win_button").onclick = retry
+
+# Tracking outbound links to Flowstate
+
+track_outbound = (event) ->
+  event.preventDefault()
+  href = event.target.href
+  proceed = -> document.location = href
+  ga 'send', 'event', {
+    eventCategory: 'Affiliate Link'
+    eventAction: 'click'
+    eventLabel: event.target.className
+    transport: 'beacon'
+    hitCallback: proceed
+  }
+  setTimeout proceed, 1000
+
+if get "affiliate_mac"
+  get("affiliate_mac").onclick = track_outbound
+  get("affiliate_ios").onclick = track_outbound
+
+  if is_ios then show 'affiliate_ios'
+  else if is_mac then show 'affiliate_mac'
