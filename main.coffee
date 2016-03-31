@@ -5,8 +5,11 @@ time_div = document.getElementById('time')
 input = document.getElementById('input')
 hardcore = document.getElementById('hardcore')
 run = false
+won = false
 tock = null
+start_time = 0
 last_wpm = 0
+last_word = 0
 is_ios = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream
 is_mac = /Max|OS X/.test(navigator.userAgent) && !window.MSStream
 
@@ -33,9 +36,12 @@ update_clock = () ->
 update_stats = () ->
   chars = input.value.length
   words = input.value.split(/\s+/).length - 1
-  wpm = 60 * words  // (session_length - time_left)
-  if time_left % 1 <= .1 then last_wpm = wpm
+  if words > last_word
+    wpm = 60 * words  // (new Date().getTime() / 1000 - start_time)
+    if isNaN(wpm) then wpm = 0
+    last_wpm = wpm
   else wpm = last_wpm
+  last_word = words
   get('stats').innerHTML = "#{chars}c #{words}w #{wpm}wpm"
 
 die = () ->
@@ -63,6 +69,7 @@ save_link = ->
 win = () ->
   clearInterval(tock)
   run = false
+  won = true
   if hardcore_mode
     hide 'hardcore'
     input.className = ""
@@ -80,10 +87,9 @@ tick = () ->
   time_left -= 0.1
   time_since_stroke += 0.1
   update_clock()
-  update_stats()
   if hardcore_mode
     hardcore.style.opacity = if time_since_stroke > .1 then 0 else 1
-  if time_left <= 0 then win()
+  if not won and time_left <= 0 then win()
   else if time_since_stroke > kill then die()
   else if time_since_stroke > fade
     perc = (time_since_stroke - fade) / (kill - fade)
@@ -103,6 +109,8 @@ keyFromCharCode = (charCode, shift) ->
   return char
 
 stroke = (e) ->
+  update_stats()
+  if won then return
   evt = e || window.event
   charCode = evt.keyCode || evt.which
   if charCode and charCode not in valid_key_codes then return
@@ -147,6 +155,9 @@ start = ->
   time_left = session_length
   update_clock()
   input.placeholder = "Start typing..."
+  won = false
+  run = false
+  start_time = new Date().getTime() / 1000
   get('status').style.opacity = 1
   get('status_lower').style.opacity = 1
   hide 'logo'
