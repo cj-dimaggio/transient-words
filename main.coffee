@@ -57,11 +57,8 @@ die = () ->
   show 'die'
   show 'logo'
   if ga
-    ga 'send', 'event', 'Write', 'die', {
-      "session_length": session_length
-      "time_left": time_left
-      "words": words
-    }
+    ga 'send', 'event', 'Write', 'die', '', session_length - time_left
+    ga 'send', 'event', 'stats', 'words', 'die', words
 
 save_link = ->
   get("save_button").href = "data:application/octet-stream;charset=utf-8;base64," + btoa(input.value)
@@ -78,10 +75,9 @@ win = () ->
   show 'save_button'
   hide 'time'
   if ga
-    ga 'send', 'event', 'Write', 'win', {
-      "session_length": session_length
-      "words": input.value.split(/\s+/).length - 1
-    }
+    ga 'send', 'event', 'Write', 'win', '', session_length
+    ga 'send', 'event', 'stats', 'words', 'win', input.value.split(/\s+/).length - 1
+
 
 tick = () ->
   time_left -= 0.1
@@ -172,10 +168,7 @@ start = ->
     input.className = ""
   # fullscreen document.getElementById('content')
   if ga
-    ga 'send', 'event', 'Write', 'start', {
-      "session_length": session_length
-    }
-
+    ga 'send', 'event', 'Write', 'start', '', session_length
 
   input.focus()
 
