@@ -60,9 +60,6 @@ die = () ->
     ga 'send', 'event', 'Write', 'die', '', session_length - time_left
     ga 'send', 'event', 'stats', 'words', 'die', words
 
-save_link = ->
-  get("save_button").href = "data:application/octet-stream;charset=utf-8;base64," + btoa(input.value)
-
 win = () ->
   clearInterval(tock)
   run = false
@@ -70,7 +67,6 @@ win = () ->
   if hardcore_mode
     hide 'hardcore'
     input.className = ""
-  save_link()
   show 'win_button'
   show 'save_button'
   hide 'time'
@@ -190,8 +186,10 @@ document.getElementById("hide_help").onclick = -> hide 'help'
 document.getElementById("retry_button").onclick = retry
 document.getElementById("win_button").onclick = retry
 
-# Tracking outbound links to Flowstate
+document.getElementById("save_button").onclick = (event) ->
+  get("save_button").href = "data:application/octet-stream;charset=utf-8;base64," + btoa(input.value)
 
+# Tracking outbound links to Flowstate
 track_outbound = (event) ->
   event.preventDefault()
   href = event.target.href
