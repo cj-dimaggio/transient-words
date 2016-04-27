@@ -105,9 +105,12 @@ stroke = (e) ->
   if won then return
   evt = e || window.event
   charCode = evt.keyCode || evt.which
+  ctrl_down = evt.ctrlKey || evt.metaKey
   if charCode and charCode not in valid_key_codes then return
   if e.code and not e.code.match valid_keys then return
-
+  if ctrl_down and (charCode == 67 or charCode == 86 or charCode == 88)
+    evt.preventDefault()
+    return
   if hardcore
     hardcore.innerHTML = keyFromCharCode charCode, evt.shiftKey
 
