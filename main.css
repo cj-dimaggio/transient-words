@@ -1,4 +1,6 @@
 html, body, #content { height: 100%; }
+.realtimeuserscounter__attr { display: none !important; }
+.realtimeuserscounter__num { display: inline; }
 #content
     {
     height: 100%;
