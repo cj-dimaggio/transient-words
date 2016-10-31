@@ -1,0 +1,105 @@
+
+h2.tagline
+    {
+    font-family: Merriweather;
+    font-weight: 400;
+    font-size: $reg;
+    text-align: center;
+    &::selection
+        {
+        color: $white;
+        background: $red;
+        }
+    .caret
+        {
+        display: inline-block;
+        margin-left: -6px;
+        color: $red;
+        animation: PulseCaret linear 2s;
+        animation-iteration-count:infinite;
+        opacity: .1;
+        }
+    }
+
+footer.accolades
+    {
+    position: fixed;
+    bottom: 20px;
+    width: calc(100% - 40px);
+    padding: 20px;
+    z-index: -2;
+    img
+        {
+        width: 700px;
+        max-width: 100%;
+        margin: 0px auto;
+        display: block;
+        }
+    }
+
+@keyframes PulseCaret
+    {
+    12%   { opacity: 1; }
+    80%   { opacity: .1; }
+    }
+
+
+
+#logo
+    {
+    width: 500px;
+    margin: 0px auto;
+    position: relative;
+    h1
+        {
+        width: calc(100% - 172px);
+        position: absolute;
+        top: 0px;
+        margin: 0px;
+        padding: 0px;
+        left: 172px;
+        font-size: $xxlarge;
+        font-weight: 900;
+        height: 156px;
+        line-height: 1em;
+        .line1, .line2, .line3
+            {
+            word-break: nowrap;
+            position: absolute;
+            display: inline-block;
+            width: 100%;
+            }
+        .line1 { top: -6px; }
+        .line2 { top: 52px; color: $red; }
+        .line3 { top: 110px; }
+        }
+    .mark
+        {
+        width: 156px;
+        height: 156px;
+        background: $red;
+        box-shadow: inset 0px 0px 0px 20px $red, inset 0px 0px 0px 32px $white;
+        }
+    &.small
+        {
+        width: 300px;
+        margin: 24px auto 60px auto;
+        h1
+            {
+            width: 270px;
+            font-size: $small;
+            font-weight: 400;
+            left: 30px;
+            height: 24px;
+            .line1, .line2, .line3 { position: static; display: inline; line-height: 24px;}
+            }
+        .mark
+            {
+            width: 24px; height: 24px;
+            box-shadow: inset 0px 0px 0px 3px $red, inset 0px 0px 0px 5px $white;
+            }
+        .caret { display: none; }
+        }
+    }
+
+
