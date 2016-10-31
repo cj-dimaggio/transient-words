@@ -57,7 +57,6 @@ body
 @media (max-width: 680px) {
     html { font-size: .75em; }
     body.home, body.write { overflow: auto; }
-    nav {top: 26px;}
     #logo
         {
         width: 270px;
@@ -124,28 +123,32 @@ aside
     {
     position: absolute;
     display: block;
-    width: 100%;
+    width: auto;
     text-align: right;
-    transform: rotate(-5deg);
-    top: -10px;
+    transform: rotate(7deg);
+    top: -50px;
+    right: 24px;
     transform-origin: left top;
-    transition: all 1s 2s ease-out;
+    transition: all 1s 2s cubic-bezier(.3,.87,.73,1.15);
+    opacity: 0;
     &.show
         {
         transform: rotate(0deg);
-        top: 24px;
+        top: 16px;
+        opacity: 1;
         }
     }
 
 .banner
     {
     text-decoration: none;
+    display: inline-block;
     background: $green;
     background: linear-gradient(to bottom, $green 0%, #7DBA48 100%);
     box-shadow: 0px 2px 8px rgba(0,0,0,.2);
     border-radius: 20px;
-    margin-right: 24px;
     padding: 6px 24px;
+    margin: 0px;
     color: $white;
     &:hover
         {
