@@ -1,6 +1,4 @@
-<!doctype html>
-<head>
-  <meta name="description" content="Don’t stop typing, or all progress will be lost.">
+<meta name="description" content="Don’t stop typing, or all progress will be lost.">
 <meta name="author" content="Manuel Ebert">
 <link rel="author" href="https://twitter.com/maebert"/>
 
@@ -44,65 +42,3 @@
 
   amplitude.init("{{ config['AMPLITUDE_API_KEY' ]}}", null, {"includeReferrer": true, "sessionTimeout": 90*60*1000});
 </script>
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900|Merriweather" rel="stylesheet">
-  <link rel="stylesheet" href="css/common.css" type="text/css">
-</head>
-<body class="home">
-
-<nav>
-    <a href="help.html" id="help">Help</a>
-</nav>
-
-<aside>
-  <a href="help.html#nanowrimo" class="banner">
-    Writing for #NaNoWriMo?
-  </a>
-</aside>
-
-<div class="content" role="main">
-
-    <div class="space-xl"></div>
-
-    <div id="logo">
-        <div class="mark"></div>
-        <h1>
-            <span class="line1">The Most</span>
-            <span class="line2">Dangerous</span>
-            <span class="line3">Writing App</span>
-        </h1>
-    </div>
-    <div class="space-m"></div>
-
-    <h2 class="tagline">Don’t stop typing, or all progress will be lost.<i class="caret icon-caret"></i></h2>
-
-    <div class="space-xl"></div>
-
-    <div class="center">
-        <a href="write.html" id="writebutton" class="btn btn-red ghost">Start Writing</a>
-    </div>
-
-</div>
-
-<footer class="accolades">
-    <img src="bin/accolades.png">
-</footer>
-
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/common.js"></script>
-
-<script>
-
-  $("#writebutton").write_button();
-  $("aside").addClass("show");
-  amplitude.logEvent('view_home')
-
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-74466223-1', 'auto');
-</script>
-
-</body>
-</html>
-

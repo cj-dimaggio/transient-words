@@ -1,0 +1,102 @@
+<!doctype html>
+<head>
+  <!-- @import "meta.kit" -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900|Merriweather" rel="stylesheet">
+  <link rel="stylesheet" href="css/common.css" type="text/css">
+</head>
+<body class="home">
+
+<div id='hardcore'></div>
+<div id='progress'></div>
+
+<div class="content narrow full-height" role="main">
+
+    <div id="input-wrap">
+        <textarea id='input' placeholder="Start typing..." spellcheck="false"></textarea>
+    </div>
+
+    <div id="win">
+        <div class="splitscreen centered">
+        <div class="left">
+            <a href="" id="download" class="btn btn-small btn-green ghost" download="mdwa.txt">Download</a>
+        </div>
+        <div class="right">
+            <a href="write.html" id="win_button" class="try_again btn btn-small btn-grey ghost">Start again</a>
+        </div>
+    </div>
+
+    <div id="wordcount">0 words</div>
+</div>
+
+<div id="die" class="">
+    <div class="bar-wrap">
+        <div class="bars">
+            <div class="bar bar-1"></div>
+            <div class="bar bar-2"></div>
+            <div class="bar bar-3"></div>
+        </div>
+    </div>
+
+
+    <div class="content narrow">
+        <h3>You failed.</h3>
+
+        <div class="center proceed">
+            <a href="#" id="tweet" target="_blank">Test</a>
+            <a href="write.html" class="try_again btn btn-white ghost">Try again</a>
+        </div>
+
+        <div class="signup">
+            <p class="rescue_instructions">Not all is lost! Sign up for our (very occasional) writer's newsletter, and we’ll let you continue your work.</p>
+
+                <form id="registerForm" class="form form-register" method="POST" action="{{ url_for('public.register') }}" role="form">
+                    <div class="form-group">
+                        <input type="text" id="email" name="email" class="form-control float-label" placeholder="Your E-Mail">
+                    </div>
+                    <input class="btn btn-square btn-light" id="submit" type="submit" value="Sign Up">
+                </form>
+
+                <div class="center">
+                    <p>or</p>
+                    <a href="write.html" class="try_again btn btn-white ghost">Try again</a>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+
+<script>
+
+if (localStorage.getItem("mdwa.returning") === "true") $("#die").addClass('returning');
+
+$(".try_again").attr("href", window.location.href)
+let limits = new RegExp(`[\?&]limit=([0-9]+)(m|w)[^&#]*`).exec(window.location.href) || ["", "5", "m"];
+
+let session_limit = parseInt(limits[1]);
+let duration = 0;
+let session_type = limits[2] == "m" ? "timed" : "words"
+if (session_type === "timed") { session_limit *= 60 }  // timed sessions
+let won = false;
+
+$("#win_button").write_button({limit: session_limit, type: session_type, hidden: true });
+</script>
+
+<script type="text/javascript" src="js/app.js"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-74466223-1', 'auto');
+</script>
+
+</body>
+</html>
+
