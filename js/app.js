@@ -54,6 +54,13 @@ $("form").on('submit', function(evt) {
   } else {
     // Register user
     $input.val(atob(localStorage.getItem('mdwa.draft')));
+    let email = $("#email").val();
+
+    amplitude.getInstance().setUserId(email);
+    let ident = new amplitude.Identify().setOnce('created_at', Math.floor(Date.now() / 1000));
+    amplitude.identify(ident);
+
+    localStorage.setItem("mdwa.email", email);
     localStorage.setItem("mdwa.returning", "true");
     danger(0);
     win();
