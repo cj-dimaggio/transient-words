@@ -168,8 +168,8 @@ let stroke = function(e) {
     evt.preventDefault();
     return;
   }
-  // Ctrl + Alt + N -> Night Mode!
-  if (ctrl_down && evt.altKey && (charCode === 78 || charCode == 192)) {
+  // Ctrl + (Alt or Cmd) + N -> Night Mode!
+  if (evt.ctrlKey && __in__(charCode, [78, 192]) && (evt.metaKey || evt.altKey)) {
     console.log("night mode");
     $("body").toggleClass("night-mode");
     return;
