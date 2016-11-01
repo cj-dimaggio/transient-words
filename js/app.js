@@ -17,8 +17,8 @@ let tock = null;
 let start_time = 0;
 let last_word = 0;
 
-let valid_keys = /Digit.|Key.|Space|Bracket.+|Enter|Semicolon|Quote|Backquote|Backslash|Comma|Period|Slash|Numpad.+/;
-let valid_key_codes = [13, 32, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 186, 187, 188, 189, 190, 191, 222];
+let invalid_chars = [9, 13, 16, 17, 18, 20, 27, 37, 38, 39, 40, 91, 93];
+
 let key_replace = {96: "0", 97: "1", 98: "2", 99: "3", 100: "4", 101: "5", 102: "6", 103: "7", 104: "8", 105: "9", 106: "*", 107: "+", 109: "-", 110: ".", 111: "/", 186: ";", 187: "=", 188: ",", 189: "-", 190: ".", 191: "/", 222: "'"};
 let shift_replace = {",": "<", ".": ">", "/": "?", ";": ":", "'": "\"", "1": "!", "2": "@", "3": "#", "4": "$", "5": "%", "6": "^", "7": "&", "8": "*", "9": "(", "0": ")", "-": "_", "=": "+"};
 
@@ -160,12 +160,15 @@ let stroke = function(e) {
   let evt = e || window.event;
   let charCode = evt.keyCode || evt.which;
   let ctrl_down = evt.ctrlKey || evt.metaKey;
-  if (charCode && !__in__(charCode, valid_key_codes)) { return; }
-  if (e.code && !e.code.match(valid_keys)) { return; }
-  if (ctrl_down && (charCode === 67 || charCode === 86 || charCode === 88)) {
+
+  // Ingore control keys such as shift, backspace, ...
+  if (charCode && __in__(charCode, invalid_chars)) { return; }
+  // Prevent Ctrl + C (or a or v or x)
+  if (ctrl_down && __in__(charCode, [65, 67, 86, 88])) {
     evt.preventDefault();
     return;
   }
+
   if (hardcore) {
     hardcore.innerHTML = keyFromCharCode(charCode, evt.shiftKey);
   }
