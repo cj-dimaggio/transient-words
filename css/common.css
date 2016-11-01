@@ -808,6 +808,18 @@ form.shake {
 .help abbr {
   text-decoration: none;
   border-bottom: 1px dashed #6F7985; }
+.help a.presskit {
+  display: inline-block;
+  background: url("../bin/presskit.png") center center no-repeat transparent;
+  width: 208px;
+  background-size: cover;
+  height: 192px;
+  margin-right: 20px;
+  float: left;
+  transition: all .2s ease-out; }
+  .help a.presskit:hover {
+    transform: scale(1.05);
+    opacity: .8; }
 .help blockquote {
   margin: 1em 2em;
   padding: 0; }
