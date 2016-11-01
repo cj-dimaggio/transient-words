@@ -1,14 +1,5 @@
 (function($, window) {
 
-let csrftoken = $('meta[name=csrf-token]').attr('content');
-$.ajaxSetup({
-    beforeSend: function(xhr, settings) {
-        if (!/^(GET|HEAD|OPTIONS|TRACE)$/i.test(settings.type)) {
-            xhr.setRequestHeader("X-CSRFToken", csrftoken)
-        }
-    }
-});
-
 const email_regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
 let $hardcore = $('#hardcore');
@@ -228,7 +219,12 @@ function __in__(needle, haystack) {
 }
 
   $("#download").on('click', function() {
-    $(this).attr("href", `data:application/octet-stream;charset=utf-8;base64,${btoa($input.val())}`);
+    let title = $input.val().replace(/[",.!-::']/g , "");
+    let length = title.indexOf(" ", 25);
+    title = title.substr(0, length > 0 ? length : 30);
+    let date = new Date().toLocaleDateString();
+    $(this).attr("download", `${title} (MDWA ${date}).txt`)
+           .attr("href", `data:application/octet-stream;charset=utf-8;base64,${btoa($input.val())}`);
   });
 
   start();
