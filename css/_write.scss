@@ -105,12 +105,16 @@
 #win
     {
     position: fixed;
-    bottom: 40px;
+    bottom: 20px;
     text-align: center;
     width: 100%;
     display: none;
     left: 0px;
     a {margin-right: 20px;}
+    .btn, .write_button_wrap
+        {
+        display: inline-block;
+        }
     }
 
 

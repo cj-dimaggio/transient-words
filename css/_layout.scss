@@ -1,4 +1,22 @@
 
+html { font-size: 1em; }
+html, body { height: 100%; margin: 0px; padding: 0px; }
+
+body.home, body.write { overflow: hidden; }
+
+body
+    {
+    font-family: Lato;
+    font-weight: 400;
+    color: $grey;
+    background: $white;
+    }
+
+.space-xl { height: 120px; }
+.space-l { height: 80px; }
+.space-m { height: 40px; }
+.space-s { height: 20px; }
+
 .center
     {
     text-align: center;

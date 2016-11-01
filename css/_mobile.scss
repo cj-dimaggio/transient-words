@@ -1,0 +1,98 @@
+
+
+@media (max-height: 600px) {
+    .space-xl { height: 60px; }
+    .space-l { height: 40px; }
+    .space-m { height: 20px; }
+    .space-s { height: 10px; }
+    #input-wrap { margin-top: 20px; }
+}
+
+@media (max-width: 680px) {
+    html { font-size: .75em; }
+    body.home, body.write { overflow: auto; }
+    #logo
+        {
+        width: 270px;
+        .mark
+            {
+            width: 90px; height: 90px;
+            box-shadow: inset 0px 0px 0px 12px $red, inset 0px 0px 0px 18px $white;
+            }
+        h1
+            {
+            width: calc(100% - 100px);
+            left: 100px;
+            font-size: $xlarge;
+            .line1 { top: -2px; }
+            .line2 { top: 30px;}
+            .line3 { top: 64px; }
+            }
+        &.small { width: 210px; }
+        }
+    .btn
+        {
+        padding: 8px 28px;
+        font-size: $reg;
+        &.btn-small { padding: 6px 18px; }
+        }
+    .session_chooser
+        {
+        bottom: 30px;
+        .full, .compact { padding: 2px 8px; }
+        }
+    .write_button_wrap.small .session_chooser { bottom: 28px; }
+    #tweet.narrow {margin: 0 0 0 60px;}
+    footer.accolades
+        {
+        padding: 0px;
+        width: 100%;
+        left: 0px;
+        img { width: calc(100% - 40px); }
+        }
+
+    #input-wrap
+        {
+        margin: 20px;
+        height: calc(100% - 100px);
+        }
+    #die
+        {
+        .content {margin: 0px; padding: 20px; box-sizing: border-box;}
+        }
+    div.splitscreen .left, div.splitscreen .right
+        {
+        height: auto;
+        width: 100%;
+        border: none;
+        padding: 0;
+        left: auto;
+        position: static;
+        }
+    form
+        {
+        max-width: 300px;
+        margin: 0px auto;
+        }
+    .content { padding: 0px 20px; box-sizing: border-box;}
+}
+
+aside
+    {
+    position: absolute;
+    display: block;
+    width: auto;
+    text-align: right;
+    transform: rotate(7deg);
+    top: -50px;
+    right: 24px;
+    transform-origin: left top;
+    transition: all 1s 2s cubic-bezier(.3,.87,.73,1.15);
+    opacity: 0;
+    &.show
+        {
+        transform: rotate(0deg);
+        top: 16px;
+        opacity: 1;
+        }
+    }
