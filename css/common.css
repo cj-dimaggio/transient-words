@@ -361,6 +361,33 @@ nav {
     nav #login .avatar, nav #account .avatar {
       margin-left: 6px; }
 
+body.night-mode {
+  background: #1a2026;
+  color: #e2e3e3; }
+  body.night-mode #input {
+    color: #e2e3e3; }
+  body.night-mode #wordcount {
+    opacity: .2; }
+  body.night-mode #input-wrap.cut-top:before {
+    background: linear-gradient(to bottom, #1a2026 0%, transparent 100%); }
+  body.night-mode #input-wrap.cut-bottom:after {
+    background: linear-gradient(to bottom, transparent 0%, #1a2026 100%); }
+  body.night-mode .btn.btn-grey {
+    color: #FFFEFA;
+    background: #c5c9cb;
+    cursor: pointer;
+    outline: none; }
+    body.night-mode .btn.btn-grey.ghost {
+      background: none;
+      border: 1px solid #c5c9cb;
+      color: #c5c9cb; }
+      body.night-mode .btn.btn-grey.ghost:hover {
+        background: #c5c9cb;
+        color: #FFFEFA; }
+  body.night-mode #progress {
+    background: #6089C6;
+    box-shadow: -1px 1px 4px rgba(96, 137, 198, 0.5); }
+
 .content.full-height {
   height: calc(100% - 1px);
   margin: 0px auto;
@@ -512,17 +539,18 @@ nav {
   background: #4F6079;
   box-shadow: -1px 1px 4px rgba(79, 96, 121, 0.5);
   transition: all .3s ease-out; }
-  #progress.danger {
-    background: #F45653;
-    box-shadow: -1px 1px 4px rgba(244, 86, 83, 0.5); }
-  #progress.won {
-    background: #86D045;
-    height: 8px;
-    box-shadow: 0px 2px 5px rgba(134, 208, 69, 0.3); }
-  #progress.hide {
-    height: 4px;
-    top: -4px;
-    box-shadow: -1px 1px 4px transparent; }
+
+#progress.danger, body.night-mode #progress.danger {
+  background: #F45653;
+  box-shadow: -1px 1px 4px rgba(244, 86, 83, 0.5); }
+#progress.won, body.night-mode #progress.won {
+  background: #86D045;
+  height: 8px;
+  box-shadow: 0px 2px 5px rgba(134, 208, 69, 0.3); }
+#progress.hide, body.night-mode #progress.hide {
+  height: 4px;
+  top: -4px;
+  box-shadow: -1px 1px 4px transparent; }
 
 #profile {
   text-align: center; }

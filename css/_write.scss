@@ -1,3 +1,24 @@
+body.night-mode
+    {
+    background: $dark;
+
+    color: $off-white;
+    #input { color: $off-white; }
+    #wordcount { opacity: .2; }
+
+    #input-wrap
+        {
+        &.cut-top:before { background: linear-gradient(to bottom, $dark 0%, transparent 100%); }
+        &.cut-bottom:after { background: linear-gradient(to bottom, transparent 0%, $dark 100%); }
+        }
+    .btn.btn-grey { @include button($off-off-white); }
+    #progress
+        {
+        background: $light-blue;
+        box-shadow: -1px 1px 4px fade-out($light-blue, .5);
+        }
+    }
+
 .content.full-height
     {
     height: calc(100% - 1px);
@@ -174,6 +195,7 @@
     &::-webkit-scrollbar { display: none; }
     }
 
+
 #progress
     {
     position: fixed;
@@ -184,6 +206,10 @@
     background: $blue;
     box-shadow: -1px 1px 4px fade-out($blue, .5);
     transition: all .3s ease-out;
+    }
+
+#progress, body.night-mode #progress
+    {
     &.danger
         {
         background: $red;
