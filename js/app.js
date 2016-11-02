@@ -202,12 +202,30 @@ $input.on('scroll', function () {
 
 $input.on('keydown', stroke);
 
-// let fullscreen = function(el) {
-//   if (el.requestFullscreen) { return el.requestFullscreen();
-//   } else if (el.mozRequestFullScreen) { return el.mozRequestFullScreen();
-//   } else if (el.webkitRequestFullscreen) { return el.webkitRequestFullscreen();
-//   } else if (el.msRequestFullscreen) { return el.msRequestFullscreen(); }
-// };
+let toggleFullScreen = function() {
+  if (!document.fullscreenElement &&    // alternative standard method
+      !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {  // current working methods
+    if (document.documentElement.requestFullscreen) {
+      document.documentElement.requestFullscreen();
+    } else if (document.documentElement.msRequestFullscreen) {
+      document.documentElement.msRequestFullscreen();
+    } else if (document.documentElement.mozRequestFullScreen) {
+      document.documentElement.mozRequestFullScreen();
+    } else if (document.documentElement.webkitRequestFullscreen) {
+      document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+    }
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.msExitFullscreen) {
+      document.msExitFullscreen();
+    } else if (document.mozCancelFullScreen) {
+      document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
+    }
+  }
+}
 
 let now = () => new Date().getTime() / 1000;
 
@@ -226,6 +244,9 @@ let start = function() {
 function __in__(needle, haystack) {
   return haystack.indexOf(needle) >= 0;
 }
+
+  $("#toggle-night-mode").on('click', () => $("body").toggleClass("night-mode"));
+  $("#toggle-fullscreen").on('click', toggleFullScreen);
 
   $("#download").on('click', function() {
     let title = $input.val().replace(/[",.!-::']/g , "");

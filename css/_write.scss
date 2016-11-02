@@ -17,6 +17,7 @@ body.night-mode
         background: $light-blue;
         box-shadow: -1px 1px 4px fade-out($light-blue, .5);
         }
+    #toggle-night-mode {transform: rotate(180deg);}
     }
 
 .content.full-height
@@ -169,6 +170,16 @@ body.night-mode
         top: auto; bottom: 0px;
         background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, $white 100%);
         }
+    }
+
+#buttons
+    {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: $reg;
+    i { opacity: .2; cursor: pointer; display: inline-block;}
+    i:hover { opacity: 1; }
     }
 
 

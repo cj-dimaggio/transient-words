@@ -328,40 +328,6 @@
 		"oF": 0,
 		"opt": 0
 		},
-	"\/fonts\/mdwa.eot": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/fonts\/mdwa.eot",
-		"oF": 0
-		},
-	"\/fonts\/mdwa.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/fonts\/mdwa.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/fonts\/mdwa.ttf": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/fonts\/mdwa.ttf",
-		"oF": 0
-		},
-	"\/fonts\/mdwa.woff": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/fonts\/mdwa.woff",
-		"oF": 0
-		},
-	"\/fonts\/mdwa.woff2": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/fonts\/mdwa.woff2",
-		"oF": 0
-		},
 	"\/help.html": {
 		"ft": 8192,
 		"oA": 2,
