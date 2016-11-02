@@ -9,6 +9,128 @@
 	],
 "creatorBuild": "25428",
 "files": {
+	"\/.gitignore": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/.gitignore",
+		"oF": 0
+		},
+	"\/bin\/accolades.png": {
+		"ft": 32768,
+		"iS": 13636,
+		"oA": 0,
+		"oAP": "\/bin\/accolades.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/bin\/app_icon.png": {
+		"ft": 32768,
+		"iS": 11940,
+		"oA": 0,
+		"oAP": "\/bin\/app_icon.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/bin\/banner.png": {
+		"ft": 32768,
+		"iS": 78440,
+		"oA": 0,
+		"oAP": "\/bin\/banner.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/bin\/presskit.png": {
+		"ft": 32768,
+		"iS": 126825,
+		"oA": 0,
+		"oAP": "\/bin\/presskit.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/CNAME": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/CNAME",
+		"oF": 0
+		},
+	"\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_dashboard.scssc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_dashboard.scssc",
+		"oF": 0
+		},
+	"\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_form.scssc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_form.scssc",
+		"oF": 0
+		},
+	"\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_help.scssc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_help.scssc",
+		"oF": 0
+		},
+	"\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_home.scssc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_home.scssc",
+		"oF": 0
+		},
+	"\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_icons.scssc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_icons.scssc",
+		"oF": 0
+		},
+	"\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_layout.scssc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_layout.scssc",
+		"oF": 0
+		},
+	"\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_mobile.scssc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_mobile.scssc",
+		"oF": 0
+		},
+	"\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_nav.scssc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_nav.scssc",
+		"oF": 0
+		},
+	"\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_profile.scssc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_profile.scssc",
+		"oF": 0
+		},
+	"\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_tweet.scssc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_tweet.scssc",
+		"oF": 0
+		},
+	"\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_write.scssc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_write.scssc",
+		"oF": 0
+		},
+	"\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_write_button.scssc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_write_button.scssc",
+		"oF": 0
+		},
+	"\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/common.scssc": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/common.scssc",
+		"oF": 0
+		},
 	"\/css\/_dashboard.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -186,44 +308,140 @@
 		"oS": 0
 		},
 	"\/css\/common.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
 		"ft": 4,
 		"ma": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/css\/common.css",
-		"oF": 0,
-		"oS": 0,
+		"oF": 1,
+		"oS": 3,
 		"uL": 1
+		},
+	"\/favicon.png": {
+		"ft": 32768,
+		"iS": 369,
+		"oA": 0,
+		"oAP": "\/favicon.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/fonts\/mdwa.eot": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/fonts\/mdwa.eot",
+		"oF": 0
+		},
+	"\/fonts\/mdwa.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/fonts\/mdwa.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/fonts\/mdwa.ttf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/fonts\/mdwa.ttf",
+		"oF": 0
+		},
+	"\/fonts\/mdwa.woff": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/fonts\/mdwa.woff",
+		"oF": 0
+		},
+	"\/fonts\/mdwa.woff2": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/fonts\/mdwa.woff2",
+		"oF": 0
+		},
+	"\/help.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/help.html",
+		"oF": 0
+		},
+	"\/index.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/index.html",
+		"oF": 0
 		},
 	"\/js\/app.js": {
 		"ft": 64,
 		"mi": 1,
-		"oA": 1,
-		"oAP": "\/js\/min\/app-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
+		"oA": 0,
+		"oAP": "\/js\/min\/app.js",
+		"oF": 3,
+		"sC": 3,
+		"tS": 1
 		},
 	"\/js\/common.js": {
 		"ft": 64,
 		"mi": 1,
-		"oA": 1,
-		"oAP": "\/js\/min\/common-min.js",
-		"oF": 0,
-		"sC": 0,
-		"tS": 0
+		"oA": 0,
+		"oAP": "\/js\/min\/common.js",
+		"oF": 3,
+		"sC": 3,
+		"tS": 1
 		},
-	"\/js\/jquery.min.js": {
+	"\/js\/min\/jquery.js": {
 		"ft": 64,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/js\/min\/jquery.min-min.js",
+		"oAP": "\/js\/min\/min\/jquery-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
+		},
+	"\/LICENSE.md": {
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"eLB": 0,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"oA": 0,
+		"oAP": "\/LICENSE.html",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
+		},
+	"\/media\/MDWA Press Kit.zip": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/media\/MDWA Press Kit.zip",
+		"oF": 0
+		},
+	"\/README.md": {
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"eLB": 0,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"oA": 0,
+		"oAP": "\/README.html",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
 		},
 	"\/src\/_js.kit": {
 		"ft": 2048,
@@ -239,21 +457,27 @@
 		},
 	"\/src\/help.kit": {
 		"ft": 2048,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/help.html",
-		"oF": 2
+		"oF": 3
 		},
 	"\/src\/index.kit": {
 		"ft": 2048,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/index.html",
-		"oF": 2
+		"oF": 3
 		},
 	"\/src\/write.kit": {
 		"ft": 2048,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/write.html",
-		"oF": 2
+		"oF": 3
+		},
+	"\/write.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/write.html",
+		"oF": 0
 		}
 	},
 "hooks": [
@@ -264,7 +488,8 @@
 	"creationDate": 499781896,
 	"displayValue": "themostdangerouswritingapp",
 	"displayValueWasSetByUser": 1,
-	"iconImageName": "defaultFrameworkIcon"
+	"iconImageName": "defaultFrameworkIcon",
+	"lastBuiltDate": 499782074
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
@@ -1577,7 +1802,7 @@
 	"externalServerAddress": "http:\/\/localhost:8888",
 	"gitIgnoreBuildFolder": 1,
 	"hideConfigFile": 0,
-	"jsCheckerReservedNamesString": "",
+	"jsCheckerReservedNamesString": "jQuery,won:write,session_type,session_limit,hardcore,amplitude,$",
 	"jsHintFlags2": {
 		"asi": {
 			"active": 0,

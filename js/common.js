@@ -11,13 +11,12 @@
 
   $.fn.write_button = function(options){
     let settings = $.extend({}, defaults, options),
-        el = $(this),
-        triggerIn = "focus",
-        triggerOut = "blur";
-    el.each(function( index, value ) {
+        el = $(this);
+
+    el.each(function() {
 
       let btn = $(this);
-      let [url, _] = btn.attr("href").split("?");
+      let url = btn.attr("href").split("?")[0];
 
       let $wrapper = $("<div class='write_button_wrap'></div>")
       if (btn.hasClass("btn-small")) { $wrapper.addClass("small"); }
@@ -25,12 +24,12 @@
 
       let timed_radios = "", words_radios = "";
 
-      for (idx in settings.time_limits) {
+      for (let idx in settings.time_limits) {
         let checked = settings.type === 'timed' && settings.limit === settings.time_limits[idx] ? 'checked' : '';
         timed_radios += `<input ${checked} class='select_time' id='radio${idx}' type='radio' name='time' value='${settings.time_limits[idx]}min' /><label for='radio${idx}'>${settings.time_limits[idx]}</label>\n`;
       }
 
-      for (idx in settings.word_limits) {
+      for (let idx in settings.word_limits) {
         let checked = settings.type === 'words' && settings.limit === settings.word_limits[idx] ? 'checked' : '';
         words_radios += `<input ${checked} class='select_time' id='radio${idx + settings.time_limits.length}' type='radio' name='time' value='${settings.word_limits[idx]}words' /><label for='radio${idx  + settings.time_limits.length}'>${String(settings.word_limits[idx]).replace("000", "k")}</label>\n`;
       }
@@ -92,10 +91,8 @@
     hidePlaceholderOnFocus: true
     };
 
-  $.fn.animateLabel = function(settings, btn) {
-    let position = btn.data("position")  || settings.position,
-    posx = 0,
-    posy = 0;
+  $.fn.animateLabel = function(settings) {
+    let posx = 0, posy = 0;
 
 
     $(this).css({
@@ -122,10 +119,8 @@
     });
   }
 
-  $.fn.removeAnimate = function(settings, btn) {
-    let position = btn.data("position")  || settings.position,
-    posx = 0,
-    posy = 0;
+  $.fn.removeAnimate = function() {
+    let posx = 0, posy = 0;
 
     $(this).css({
       "top": "0",
@@ -142,11 +137,11 @@
   $.fn.label_better = function(options){
     let settings = $.extend({}, defaults, options),
         el = $(this),
-        triggerIn = "focus",
-        triggerOut = "blur";
+        triggerIn = "focus",  // noqa
+        triggerOut = "blur";  // noqa
     if(settings.easing == "bounce") settings.easing = "cubic-bezier(0.175, 0.885, 0.420, 1.310)"
 
-    el.each(function( index, value ) {
+    el.each(function() {
       let btn = $(this),
           position = btn.data("position")  || settings.position;
       btn.wrapAll("<div class='lb_wrap' style='position:relative; display: inline;'></div>")

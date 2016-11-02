@@ -15,7 +15,6 @@ let $wordcount = $('#wordcount');
 let run = false;
 let tock = null;
 let start_time = 0;
-let last_word = 0;
 
 let invalid_chars = [9, 13, 16, 17, 18, 20, 27, 37, 38, 39, 40, 91, 93];
 
@@ -74,12 +73,12 @@ let update_stats = function () {
 };
 
 let die = function() {
+  let duration = now() - start_time;
   localStorage.setItem('mdwa.draft', btoa($input.val()));
   amplitude.logEvent('stop_writing', {'session_type': session_type, 'session_limit': session_limit, 'duration': duration, 'won': false, 'words': words, 'dangers': danger_count})
   $input.val("");
   clearInterval(tock);
   run = false;
-  let time = duration;
   $('#tweet').attr("href", `https://twitter.com/intent/tweet?text=I+wrote+${words}+words+using+The+Most+Dangerous+Writing+App+-+until+it+deleted+everything+.+%23MDWA&url=http%3A%2F%2Fwww.themostdangerouswritingapp.com`);
   $('#tweet').text(`I wrote ${words} words using The Most Dangerous Writing App - until it deleted everything.`);
   $("#die").show();
@@ -96,8 +95,8 @@ let win = function() {
   setTimeout(function() {$progress.addClass("hide");}, 3000)
 
   if (hardcore_mode) {
-    hide('hardcore');
-    input.className = "";
+    $('#hardcore').hide();
+    $input.removeClass("hardcore");
   }
 
   $("#win").show();
@@ -105,7 +104,7 @@ let win = function() {
 };
 
 let tick = function() {
-  duration = now() - start_time;
+  let duration = now() - start_time;
   progress = (session_type == "timed" ? duration : words) / session_limit;
   time_since_stroke += 0.1;
 
@@ -139,16 +138,18 @@ let danger = function(perc) {
 }
 
 let keyFromCharCode = function(charCode, shift) {
+  let char;
   if (key_replace.hasOwnProperty(charCode)) {
-    var char = key_replace[charCode];
+    char = key_replace[charCode];
   } else if (48 <= charCode && charCode <= 90) {
-    var char = String.fromCharCode(charCode);
+    char = String.fromCharCode(charCode);
     if (!shift) {
       char = char.toLowerCase();
     }
-  } else { var char = ""; }
+  } else { char = ""; }
+
   if (shift && shift_replace.hasOwnProperty(char)) {
-    var char = shift_replace[char];
+    char = shift_replace[char];
   }
   return char;
 };
@@ -201,12 +202,12 @@ $input.on('scroll', function () {
 
 $input.on('keydown', stroke);
 
-let fullscreen = function(el) {
-  if (el.requestFullscreen) { return el.requestFullscreen();
-  } else if (el.mozRequestFullScreen) { return el.mozRequestFullScreen();
-  } else if (el.webkitRequestFullscreen) { return el.webkitRequestFullscreen();
-  } else if (el.msRequestFullscreen) { return el.msRequestFullscreen(); }
-};
+// let fullscreen = function(el) {
+//   if (el.requestFullscreen) { return el.requestFullscreen();
+//   } else if (el.mozRequestFullScreen) { return el.mozRequestFullScreen();
+//   } else if (el.webkitRequestFullscreen) { return el.webkitRequestFullscreen();
+//   } else if (el.msRequestFullscreen) { return el.msRequestFullscreen(); }
+// };
 
 let now = () => new Date().getTime() / 1000;
 
@@ -240,7 +241,7 @@ function __in__(needle, haystack) {
  $("input.float-label").label_better({
     animationTime: 250,
     easing: "ease-in-out",
-    offset: -8,
+    offset: -8
   });
 
 
