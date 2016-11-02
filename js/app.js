@@ -155,23 +155,22 @@ let keyFromCharCode = function(charCode, shift) {
 
 let stroke = function(e) {
   update_stats();
-  if (won) { return; }
 
   let evt = e || window.event;
   let charCode = evt.keyCode || evt.which;
   let ctrl_down = evt.ctrlKey || evt.metaKey;
 
+  // Ctrl + (Alt or Cmd) + N -> Night Mode!
+  if (evt.ctrlKey && __in__(charCode, [78, 192]) && (evt.metaKey || evt.altKey)) {
+    $("body").toggleClass("night-mode"); return;
+  }
+  // If we have won, nothing to do
+  if (won) { return; }
   // Ingore control keys such as shift, backspace, ...
   if (charCode && __in__(charCode, invalid_chars)) { return; }
   // Prevent Ctrl + C (or a or v or x)
   if (ctrl_down && __in__(charCode, [65, 67, 86, 88])) {
     evt.preventDefault();
-    return;
-  }
-  // Ctrl + (Alt or Cmd) + N -> Night Mode!
-  if (evt.ctrlKey && __in__(charCode, [78, 192]) && (evt.metaKey || evt.altKey)) {
-    console.log("night mode");
-    $("body").toggleClass("night-mode");
     return;
   }
 
