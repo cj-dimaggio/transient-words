@@ -5,11 +5,12 @@
     .space-l { height: 40px; }
     .space-m { height: 20px; }
     .space-s { height: 10px; }
-    #input-wrap { margin-top: 20px; }
+    #input-wrap { margin-top: 20px; height: calc(100% - 80px);}
     #wordcount { bottom: 20px; }
 }
 
 @media (max-width: 680px) {
+    i#toggle-fullscreen { display: none; }
     html { font-size: .75em; }
     body.home, body.write { overflow: auto; }
     #logo
@@ -54,8 +55,8 @@
 
     #input-wrap
         {
-        margin: 20px;
-        height: calc(100% - 100px);
+        margin: 20px 0;
+        height: calc(100% - 60px);
         }
     #die
         {
