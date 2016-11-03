@@ -225,6 +225,12 @@ let toggleFullScreen = function() {
       document.webkitExitFullscreen();
     }
   }
+  $input.focus_end();
+}
+
+let toggleNightMode = function() {
+  $("body").toggleClass("night-mode");
+  $input.focus_end();
 }
 
 let now = () => new Date().getTime() / 1000;
@@ -245,7 +251,7 @@ function __in__(needle, haystack) {
   return haystack.indexOf(needle) >= 0;
 }
 
-  $("#toggle-night-mode").on('click', () => $("body").toggleClass("night-mode"));
+  $("#toggle-night-mode").on('click', toggleNightMode);
   $("#toggle-fullscreen").on('click', toggleFullScreen);
 
   $("#download").on('click', function() {
