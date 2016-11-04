@@ -73,6 +73,7 @@ let update_stats = function () {
 };
 
 let die = function() {
+  if (!run) return;
   let duration = now() - start_time;
   localStorage.setItem('mdwa.draft', btoa($input.val()));
   amplitude.logEvent('stop_writing', {'session_type': session_type, 'session_limit': session_limit, 'duration': duration, 'won': false, 'words': words, 'dangers': danger_count})
