@@ -134,16 +134,16 @@
 
     let limits = new RegExp(`[\?&]limit=([0-9]+)(m|w)[^&#]*`).exec(window.location.href) || ["", "5", "m"];
 
-    let session_limit = parseInt(limits[1]);
+    let session_duration = parseInt(limits[1]);
     let duration = 0;
     let session_type = limits[2] == "m" ? "timed" : "words"
-    if (session_type === "timed") { session_limit *= 60 }  // timed sessions
+    let session_limit = session_type === "timed" ? session_duration * 60 : session_duration;
     let won = false;
 
     $(function() {
         let user_email = localStorage.getItem("mdwa.email");
         if (user_email) amplitude.getInstance().setUserId(user_email);
-        $("#win_button").write_button({limit: session_limit, type: session_type, hidden: true });
+        $("#win_button").write_button({limit: session_duration, type: session_type, hidden: true });
         $(".try_again").attr("href", window.location.href)
     });
 
