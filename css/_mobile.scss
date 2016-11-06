@@ -41,7 +41,8 @@
     .session_chooser
         {
         bottom: 30px;
-        .full, .compact { padding: 2px 8px; }
+        font-size: 1em;
+
         }
     .write_button_wrap.small .session_chooser { bottom: 28px; }
     #tweet.narrow {margin: 0 0 0 60px;}
@@ -77,6 +78,7 @@
         margin: 0px auto;
         }
     .content { padding: 0px 20px; box-sizing: border-box;}
+    #hardcore { font-size: 200pt;}
 }
 
 aside

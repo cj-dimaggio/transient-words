@@ -50,6 +50,9 @@
                         ${words_radios}
                     </div>
                 </div>
+                <div class="tab-hardcore">
+                  <input type="checkbox" name="hardcore-check" id="hardcore-check" /><label for="hardcore-check">Hardcore mode</label>
+                </div>
             </div>
             <div class="compact">
                 Session length: <span class="choice">${settings.limit} ${settings.type == 'timed' ? 'minutes' : 'words'}</span> <i class="edit icon-pencil"></i>
@@ -60,9 +63,12 @@
       if (settings.hidden) {
         btn.on("mouseenter", function() {$chooser.fadeIn();});
       }
-      $chooser.find("input[type=radio]").on('change', function() {
-          btn.attr('href', `${url}?limit=${$(this).val()}`)
-      });
+      let set_url = function() {
+        let limit = $chooser.find("input[type=radio]:checked").val()
+        let hardcore = $chooser.find("#hardcore-check")[0].checked ? "&hardcore=true" : "";
+        btn.attr('href', `${url}?limit=${limit}${hardcore}`)
+      }
+      $chooser.find("input").on('change', set_url);
       $chooser.find(".tabs .words").bind('click', function () {
           $(this).parents('.full').removeClass("timed").addClass("words");
       });

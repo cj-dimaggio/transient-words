@@ -9,6 +9,7 @@
     position: absolute;
     width: 100%;
     bottom: 50px;
+    font-size: $xsmall;
 
     &.hidden {display: none;}
     .full, .compact
@@ -20,7 +21,6 @@
         padding: 5px 8px;
         border-radius: 2px;
         color: $off-white;
-        font-size: $xsmall;
         -webkit-font-smoothing: antialiased;
         font-weight: 400;
         margin-bottom: 20px;
@@ -43,7 +43,7 @@
             {
             margin: 5px 0 10px 0;
             color: $off-off-white;
-            .span { cursor: pointer; }
+            cursor: pointer;
             }
         &.timed
             {
@@ -63,6 +63,43 @@
             }
         }
 
+    input[type=checkbox] {
+    }
+
+    .tab-hardcore
+        {
+            label { cursor: pointer; }
+            input { display: none; }
+            margin: 15px 0;
+        }
+    #hardcore-check
+        {
+        cursor: pointer;
+        background: none;
+        display: inline-block;
+        margin-right: 10px;
+        visibility: hidden;
+        }
+    #hardcore-check:before
+        {
+        content: "";
+        visibility: visible;
+        width: 13px;
+        height: 13px;
+        margin-top: -2px;
+        border: 1px solid $off-off-white;
+        display: inline-block;
+        position: absolute;
+        }
+    #hardcore-check:checked:before
+        {
+        border-color: $white;
+        background: $white;
+        box-shadow: inset 0px 0px 0px 2px $light-grey;
+        }
+
+    #hardcore-check:checked + label { color: $white;}
+
     input[type=radio] { display: none; }
     input[type=radio] + label
         {
@@ -71,9 +108,9 @@
         cursor: pointer;
         display: inline-block;
         text-align: center;
-        width: 24px;
-        line-height: 24px;
-        height: 24px;
+        min-width: 26px;
+        line-height: 26px;
+        height: 26px;
         border: 1px solid transparent;
         }
     input[type=radio]:checked + label

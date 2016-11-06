@@ -74,6 +74,8 @@
     if (localStorage.getItem("mdwa.returning") === "true") $("#die").addClass('returning');
 
     var limits = new RegExp("[?&]limit=([0-9]+)(m|w)[^&#]*").exec(window.location.href) || ["", "5", "m"];
+    var hardcore_mode = new RegExp("[?&]hardcore=(true|false)").exec(window.location.href) || ["", "false"];
+    hardcore_mode = hardcore_mode[1] === "true"
 
     var session_duration = parseInt(limits[1]);
     var duration = 0;

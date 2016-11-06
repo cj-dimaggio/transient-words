@@ -1,3 +1,18 @@
+#hardcore
+    {
+    font-size: 300pt;
+    font-family: Merriweather;
+    text-align: center;
+    color: $grey;
+    width: 100%;
+    // max-width: 600px;
+    position: absolute;
+    height: calc(100% - 60px);
+    margin: 0px auto;
+    box-sizing: border-box;
+    pointer-events: none;
+    }
+
 body.night-mode
     {
     background: $dark;
@@ -5,7 +20,8 @@ body.night-mode
     color: $off-white;
     #input { color: $off-white; }
     #wordcount { opacity: .2; }
-
+    #input.hardcore { color: $grey; }
+    #hardcore { color: $off-white; }
     #input-wrap
         {
         &.cut-top:before { background: linear-gradient(to bottom, $dark 0%, transparent 100%); }
@@ -205,6 +221,7 @@ body.night-mode
         background: $red;
         }
     &::-webkit-scrollbar { display: none; }
+    &.hardcore { filter: blur(8px); color: $light-grey; padding: 8px;}
     }
 
 
