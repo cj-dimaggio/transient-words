@@ -1820,7 +1820,7 @@
 	"externalServerAddress": "http:\/\/localhost:8888",
 	"gitIgnoreBuildFolder": 1,
 	"hideConfigFile": 0,
-	"jsCheckerReservedNamesString": "jQuery,won:write,session_type,session_limit,hardcore,amplitude,$",
+	"jsCheckerReservedNamesString": "jQuery,won:write,session_type,session_limit,hardcore,amplitude,$,hardcore_mode",
 	"jsHintFlags2": {
 		"asi": {
 			"active": 0,

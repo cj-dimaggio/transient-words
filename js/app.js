@@ -47,7 +47,7 @@ $("form").on('submit', function(evt) {
     amplitude.getInstance().setUserId(email);
     let ident = new amplitude.Identify().setOnce('created_at', Math.floor(Date.now() / 1000));
     amplitude.identify(ident);
-    amplitude.logEvent('sign_up');
+    amplitude.logEvent('sign_up', {'email': email});
     localStorage.setItem("mdwa.email", email);
     localStorage.setItem("mdwa.returning", "true");
     danger(0);
