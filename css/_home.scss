@@ -103,23 +103,32 @@ footer.accolades
     }
 
 
-
+aside
+    {
+    position: absolute;
+    display: block;
+    width: 100%;
+    text-align: center;
+    top: -40px;
+    z-index: 200;
+    background: linear-gradient(to bottom, $green 0%, #7DBA48 100%);
+    /*background: linear-gradient(to bottom, #96E153 0%, $green 100%);*/
+    transition: all .7s 1s cubic-bezier(.87,-.41,.19,1.44);
+    box-shadow: 0px 2px 8px rgba(0,0,0,.2);
+    padding-top: 10px;
+    &.show
+        {
+        top: -10px;
+        }
+    }
 
 .banner
     {
     text-decoration: none;
+    color: $white;
     display: inline-block;
-    background: $green;
-    background: linear-gradient(to bottom, $green 0%, #7DBA48 100%);
-    box-shadow: 0px 2px 8px rgba(0,0,0,.2);
-    border-radius: 20px;
+    display: block;
     padding: 6px 24px;
     margin: 0px;
-    color: $white;
-    &:hover
-        {
-        background: linear-gradient(to bottom, #96E153 0%, $green 100%);
-
-        }
     }
 

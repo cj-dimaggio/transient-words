@@ -81,23 +81,4 @@
     #hardcore { font-size: 200pt;}
 }
 
-aside
-    {
-    position: absolute;
-    display: block;
-    width: auto;
-    text-align: right;
-    z-index: 200;
-    transform: rotate(7deg);
-    top: -50px;
-    right: 24px;
-    transform-origin: left top;
-    transition: all 1s 2s cubic-bezier(.3,.87,.73,1.15);
-    opacity: 0;
-    &.show
-        {
-        transform: rotate(0deg);
-        top: 16px;
-        opacity: 1;
-        }
-    }
+
