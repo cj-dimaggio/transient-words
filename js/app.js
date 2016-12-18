@@ -258,9 +258,10 @@ function __in__(needle, haystack) {
     let length = title.indexOf(" ", 25);
     title = title.substr(0, length > 0 ? length : 30);
     let date = new Date().toLocaleDateString();
-    var blob = new Blob([$input.val()], {type: "text/plain"});
-    $(this).attr("download", `${title} (MDWA ${date}).txt`)
-           .attr("href", window.URL.createObjectURL(blob));
+    let filename = `${title} (MDWA ${date}).txt`;
+    var blob = new Blob([$input.val()], {type: "text/plain;charset=utf-8"});
+    saveAs(blob, filename);
+    return false;
   });
 
   start();

@@ -410,6 +410,15 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/js\/min\/FileSaver.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/js\/min\/min\/FileSaver-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/js\/min\/jquery.js": {
 		"ft": 64,
 		"mi": 1,
@@ -501,6 +510,14 @@
 "hooks": [
 	],
 "manualImportLinks": {
+	"\/js\/app.js": [
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/js\/min\/FileSaver.js",
+			"position": 0,
+			"type": 0
+			}
+		]
 	},
 "projectAttributes": {
 	"creationDate": 499781896,
