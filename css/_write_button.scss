@@ -138,6 +138,7 @@
 
 .write_button_wrap
     {
+    z-index: 1000;
     position: relative;
     &.small .session_chooser {bottom: 40px;}
     }
