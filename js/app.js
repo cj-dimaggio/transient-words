@@ -41,7 +41,7 @@ $("form").on('submit', function(evt) {
     setTimeout(function () { $("form").removeClass('shake')}, 1000);
   } else {
     // Register user
-    $input.val(decodeURIComponent(escape(atob(localStorage.getItem("mdwa.draft")))));
+    $input.val(decodeURIComponent(escape(atob(localStorage.getItem('mdwa.draft')))));
     let email = $("#email").val();
 
     amplitude.getInstance().setUserId(email);
