@@ -41,7 +41,7 @@ $("form").on('submit', function(evt) {
     setTimeout(function () { $("form").removeClass('shake')}, 1000);
   } else {
     // Register user
-    $input.val(atob(localStorage.getItem('mdwa.draft')));
+    $input.val(decodeURIComponent(escape(atob(localStorage.getItem('mdwa.draft')))));
     let email = $("#email").val();
 
     amplitude.getInstance().setUserId(email);
@@ -73,7 +73,7 @@ let update_stats = function () {
 let die = function() {
   if (!run) return;
   let duration = now() - start_time;
-  localStorage.setItem('mdwa.draft', btoa($input.val()));
+  localStorage.setItem('mdwa.draft', btoa(unescape(encodeURIComponent($input.val()))));
   amplitude.logEvent('stop_writing', {'session_type': session_type, 'session_limit': session_limit, 'duration': duration, 'won': false, 'words': words, 'dangers': danger_count})
   $input.val("");
   clearInterval(tock);
