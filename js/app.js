@@ -207,7 +207,8 @@ $input.on('keydown', stroke);
 
 let toggleFullScreen = function() {
   if (!document.fullscreenElement &&    // alternative standard method
-      !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {  // current working methods
+      !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {
+    // current working methods
     if (document.documentElement.requestFullscreen) {
       document.documentElement.requestFullscreen();
     } else if (document.documentElement.msRequestFullscreen) {
@@ -233,6 +234,13 @@ let toggleFullScreen = function() {
 
 let toggleNightMode = function() {
   $("body").toggleClass("night-mode");
+  if($("body").hasClass("night-mode")) {
+    // set local storage to night-mode
+    localStorage.setItem("mode", "night-mode");
+  } else {
+    // regular
+    localStorage.setItem("mode", "");
+  }
   $input.focus_end();
 }
 
