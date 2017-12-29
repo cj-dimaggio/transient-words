@@ -207,7 +207,7 @@ $input.on('keydown', stroke);
 
 let toggleFullScreen = function() {
   if (!document.fullscreenElement &&    // alternative standard method
-      !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) { // current working methods
+      !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {  // current working methods
     if (document.documentElement.requestFullscreen) {
       document.documentElement.requestFullscreen();
     } else if (document.documentElement.msRequestFullscreen) {
