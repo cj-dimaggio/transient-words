@@ -92,7 +92,11 @@ let win = function() {
   won = true;
   $progress.addClass("won");
   setTimeout(function() {$progress.addClass("hide");}, 3000)
-
+  
+  if ($input.val()=="") {
+    $input.val(decodeURIComponent(escape(atob(localStorage.getItem('mdwa.draft')))));
+  }
+  
   if (hardcore_mode) {
     $('#hardcore').hide();
     $input.removeClass("hardcore");
@@ -229,6 +233,11 @@ let toggleFullScreen = function() {
 
 let toggleNightMode = function() {
   $("body").toggleClass("night-mode");
+  if($("body").hasClass("night-mode")) {
+    localStorage.setItem("mode", "night-mode");
+  } else {
+    localStorage.setItem("mode", "");
+  }
   $input.focus_end();
 }
 

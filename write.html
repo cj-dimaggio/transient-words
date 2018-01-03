@@ -142,6 +142,7 @@
 <script type="application/javascript">
 
     if (localStorage.getItem("mdwa.returning") === "true") $("#die").addClass('returning');
+    if (localStorage.getItem("mode") === "night-mode" && !$("body").hasClass("night-mode")) $("body").addClass("night-mode");
 
     var limits = new RegExp("[?&]limit=([0-9]+)(m|w)[^&#]*").exec(window.location.href) || ["", "5", "m"];
     var hardcore_mode = new RegExp("[?&]hardcore=(true|false)").exec(window.location.href) || ["", "false"];
