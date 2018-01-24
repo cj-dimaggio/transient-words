@@ -212,6 +212,7 @@ body.night-mode
     background: transparent;
     line-height: 1.65;
     font-family: Merriweather;
+    caret-color: $red;
     font-size: $reg;
     resize: none;
     &::selection

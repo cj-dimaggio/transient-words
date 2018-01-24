@@ -7,9 +7,10 @@
 		"uuidString": "3C8F4FD7-EAED-4DF7-AD42-498D819AFB96"
 		}
 	],
-"creatorBuild": "25813",
+"creatorBuild": "26097",
 "files": {
 	"\/.gitignore": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/.gitignore",
@@ -60,87 +61,10 @@
 		"q": 100
 		},
 	"\/CNAME": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/CNAME",
-		"oF": 0
-		},
-	"\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_dashboard.scssc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_dashboard.scssc",
-		"oF": 0
-		},
-	"\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_form.scssc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_form.scssc",
-		"oF": 0
-		},
-	"\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_help.scssc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_help.scssc",
-		"oF": 0
-		},
-	"\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_home.scssc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_home.scssc",
-		"oF": 0
-		},
-	"\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_icons.scssc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_icons.scssc",
-		"oF": 0
-		},
-	"\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_layout.scssc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_layout.scssc",
-		"oF": 0
-		},
-	"\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_mobile.scssc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_mobile.scssc",
-		"oF": 0
-		},
-	"\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_nav.scssc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_nav.scssc",
-		"oF": 0
-		},
-	"\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_profile.scssc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_profile.scssc",
-		"oF": 0
-		},
-	"\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_tweet.scssc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_tweet.scssc",
-		"oF": 0
-		},
-	"\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_write.scssc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_write.scssc",
-		"oF": 0
-		},
-	"\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_write_button.scssc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/_write_button.scssc",
-		"oF": 0
-		},
-	"\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/common.scssc": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/css\/.sass-cache\/9e57f4aa7077db3879521cc28642275a7b784f70\/common.scssc",
 		"oF": 0
 		},
 	"\/css\/_dashboard.scss": {
@@ -344,6 +268,7 @@
 		"q": 100
 		},
 	"\/fonts\/mdwa.eot": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/mdwa.eot",
@@ -360,30 +285,35 @@
 		"prP": 0
 		},
 	"\/fonts\/mdwa.ttf": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/mdwa.ttf",
 		"oF": 0
 		},
 	"\/fonts\/mdwa.woff": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/mdwa.woff",
 		"oF": 0
 		},
 	"\/fonts\/mdwa.woff2": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/mdwa.woff2",
 		"oF": 0
 		},
 	"\/help.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/help.html",
 		"oF": 0
 		},
 	"\/index.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/index.html",
@@ -391,6 +321,7 @@
 		},
 	"\/js\/app.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/js\/min\/app.js",
@@ -400,6 +331,7 @@
 		},
 	"\/js\/common.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/js\/min\/common.js",
@@ -409,6 +341,7 @@
 		},
 	"\/js\/min\/app.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/js\/min\/min\/app-min.js",
@@ -418,6 +351,7 @@
 		},
 	"\/js\/min\/common.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/js\/min\/min\/common-min.js",
@@ -427,6 +361,7 @@
 		},
 	"\/js\/min\/FileSaver.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/js\/min\/min\/FileSaver-min.js",
@@ -436,6 +371,7 @@
 		},
 	"\/js\/min\/jquery.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/js\/min\/min\/jquery-min.js",
@@ -444,10 +380,10 @@
 		"tS": 0
 		},
 	"\/LICENSE.md": {
+		"cB": 0,
 		"cS": 0,
 		"eF": 1,
 		"eL": 1,
-		"eLB": 0,
 		"ema": 1,
 		"eSQ": 1,
 		"ft": 4096,
@@ -462,16 +398,17 @@
 		"uCM": 0
 		},
 	"\/media\/MDWA Press Kit.zip": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/media\/MDWA Press Kit.zip",
 		"oF": 0
 		},
 	"\/README.md": {
+		"cB": 0,
 		"cS": 0,
 		"eF": 1,
 		"eL": 1,
-		"eLB": 0,
 		"ema": 1,
 		"eSQ": 1,
 		"ft": 4096,
@@ -486,36 +423,42 @@
 		"uCM": 0
 		},
 	"\/src\/_js.kit": {
+		"cB": 0,
 		"ft": 2048,
 		"oA": 1,
 		"oAP": "\/src\/_js.html",
 		"oF": 0
 		},
 	"\/src\/_meta.kit": {
+		"cB": 0,
 		"ft": 2048,
 		"oA": 1,
 		"oAP": "\/src\/_meta.html",
 		"oF": 0
 		},
 	"\/src\/help.kit": {
+		"cB": 0,
 		"ft": 2048,
 		"oA": 0,
 		"oAP": "\/help.html",
 		"oF": 3
 		},
 	"\/src\/index.kit": {
+		"cB": 0,
 		"ft": 2048,
 		"oA": 0,
 		"oAP": "\/index.html",
 		"oF": 3
 		},
 	"\/src\/write.kit": {
+		"cB": 0,
 		"ft": 2048,
 		"oA": 0,
 		"oAP": "\/write.html",
 		"oF": 3
 		},
 	"\/write.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/write.html",
@@ -943,6 +886,10 @@
 			"active": 0,
 			"optionString": "{'setWithoutGet': true, 'getWithoutSet': false}"
 			},
+		"array-bracket-newline": {
+			"active": 0,
+			"optionString": "{'multiline': true, 'minItems': null}"
+			},
 		"array-bracket-spacing": {
 			"active": 0,
 			"optionString": "'never', {'singleValue': false, 'objectsInArrays': false, 'arraysInArrays': false}"
@@ -950,6 +897,10 @@
 		"array-callback-return": {
 			"active": 0,
 			"optionString": ""
+			},
+		"array-element-newline": {
+			"active": 0,
+			"optionString": "'always'"
 			},
 		"arrow-body-style": {
 			"active": 0,
@@ -1047,6 +998,10 @@
 			"active": 0,
 			"optionString": "'always', {'null': 'always'}"
 			},
+		"for-direction": {
+			"active": 0,
+			"optionString": ""
+			},
 		"func-call-spacing": {
 			"active": 0,
 			"optionString": "'never'"
@@ -1063,9 +1018,17 @@
 			"active": 0,
 			"optionString": "'expression'"
 			},
+		"function-paren-newline": {
+			"active": 0,
+			"optionString": "'multiline'"
+			},
 		"generator-star-spacing": {
 			"active": 0,
 			"optionString": "{'before': true, 'after': false}"
+			},
+		"getter-return": {
+			"active": 0,
+			"optionString": "{'allowImplicit': false}"
 			},
 		"global-require": {
 			"active": 0,
@@ -1123,9 +1086,9 @@
 			"active": 0,
 			"optionString": "{'beforeBlockComment': true}"
 			},
-		"lines-around-directive": {
+		"lines-between-class-members": {
 			"active": 0,
-			"optionString": "{'before': 'always', 'after': 'always'}"
+			"optionString": "'always', {exceptAfterSingleLine: false}"
 			},
 		"max-depth": {
 			"active": 0,
@@ -1155,6 +1118,10 @@
 			"active": 0,
 			"optionString": "{'max': 1}"
 			},
+		"multiline-comment-style": {
+			"active": 0,
+			"optionString": "'starred-block'"
+			},
 		"multiline-ternary": {
 			"active": 0,
 			"optionString": "'always'"
@@ -1164,14 +1131,6 @@
 			"optionString": "{'newIsCap': true, 'capIsNew': true, 'newIsCapExceptions': [], 'capIsNewExceptions': ['Array', 'Boolean', 'Date', 'Error', 'Function', 'Number', 'Object', 'RegExp', 'String', 'Symbol'], 'properties': true}"
 			},
 		"new-parens": {
-			"active": 0,
-			"optionString": ""
-			},
-		"newline-after-var": {
-			"active": 0,
-			"optionString": "'always'"
-			},
-		"newline-before-return": {
 			"active": 0,
 			"optionString": ""
 			},
@@ -1194,6 +1153,10 @@
 		"no-bitwise": {
 			"active": 0,
 			"optionString": "{'allow': ['~'], 'int32Hint': true}"
+			},
+		"no-buffer-constructor": {
+			"active": 0,
+			"optionString": ""
 			},
 		"no-caller": {
 			"active": 0,
@@ -1739,6 +1702,10 @@
 			"active": 0,
 			"optionString": "{'blocks': 'always', 'switches': 'always', 'classes': 'always'}"
 			},
+		"padding-line-between-statements": {
+			"active": 0,
+			"optionString": "{blankLine: 'always', prev:'*', next:'return'}"
+			},
 		"prefer-arrow-callback": {
 			"active": 0,
 			"optionString": ""
@@ -1807,6 +1774,10 @@
 			"active": 0,
 			"optionString": "{'before': false, 'after': true}"
 			},
+		"semi-style": {
+			"active": 0,
+			"optionString": "'last'"
+			},
 		"sort-imports": {
 			"active": 0,
 			"optionString": "{'ignoreCase': false, 'ignoreMemberSort': true, 'memberSyntaxSortOrder': ['none', 'all', 'multiple', 'single']}"
@@ -1846,6 +1817,10 @@
 		"strict": {
 			"active": 0,
 			"optionString": "'safe'"
+			},
+		"switch-colon-spacing": {
+			"active": 0,
+			"optionString": "{'after': true, 'before': false}"
 			},
 		"symbol-description": {
 			"active": 0,
@@ -2259,7 +2234,8 @@
 		"createSourceMap": 0,
 		"minifyOutput": 1,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 1
+		"syntaxCheckerStyle": 1,
+		"transpilerStyle": 1
 		},
 	"languageDefaultsCSS": {
 		"autoOutputAction": 2,
@@ -2292,6 +2268,7 @@
 		"noEscapeInAttributes": 0,
 		"outputFormat": 2,
 		"outputStyle": 0,
+		"shouldRunCacheBuster": 0,
 		"useCDATA": 0,
 		"useDoubleQuotes": 0,
 		"useUnixNewlines": 0
@@ -2333,7 +2310,8 @@
 		"autoOutputPathRelativePath": "",
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
-		"autoOutputPathStyle": 0
+		"autoOutputPathStyle": 0,
+		"shouldRunCacheBuster": 0
 		},
 	"languageDefaultsLESS": {
 		"allowInsecureImports": 0,
@@ -2365,13 +2343,13 @@
 		"enableFootnotes": 1,
 		"enableLabels": 1,
 		"enableSmartQuotes": 1,
-		"escapeLineBreaks": 0,
 		"maskEmailAddresses": 1,
 		"outputFormat": 0,
 		"outputStyle": 0,
 		"parseMetadata": 1,
 		"processHTML": 0,
 		"randomFootnoteNumbers": 0,
+		"shouldRunCacheBuster": 0,
 		"useCompatibilityMode": 0
 		},
 	"languageDefaultsOTHER": {
@@ -2380,7 +2358,8 @@
 		"autoOutputPathRelativePath": "",
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
-		"autoOutputPathStyle": 0
+		"autoOutputPathStyle": 0,
+		"shouldRunCacheBuster": 0
 		},
 	"languageDefaultsPNG": {
 		"autoOutputAction": 0,
@@ -2400,7 +2379,8 @@
 		"autoOutputPathReplace2": "",
 		"autoOutputPathStyle": 0,
 		"compileDebug": 1,
-		"outputStyle": 0
+		"outputStyle": 0,
+		"shouldRunCacheBuster": 0
 		},
 	"languageDefaultsSASS": {
 		"autoOutputAction": 0,
@@ -2428,7 +2408,8 @@
 		"logicless": 0,
 		"outputFormat": 0,
 		"outputStyle": 1,
-		"railsCompatible": 0
+		"railsCompatible": 0,
+		"shouldRunCacheBuster": 0
 		},
 	"languageDefaultsSTYLUS": {
 		"autoOutputAction": 0,
@@ -2475,9 +2456,11 @@
 		},
 	"languageDefaultsUserDefined": [
 		],
+	"overrideExternalServerCSS": 0,
 	"previewPathAddition": "",
 	"skippedFoldersString": "log, _logs, logs, _cache, cache, \/storage\/framework\/sessions, node_modules",
 	"sourceFolderName": "source",
+	"susyVersion": 3,
 	"uglifyDefinesString": "",
 	"uglifyFlags2": {
 		"ascii-only": {
