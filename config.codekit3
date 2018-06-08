@@ -7,7 +7,7 @@
 		"uuidString": "3C8F4FD7-EAED-4DF7-AD42-498D819AFB96"
 		}
 	],
-"creatorBuild": "26097",
+"creatorBuild": "26268",
 "files": {
 	"\/.gitignore": {
 		"cB": 0,
@@ -397,12 +397,273 @@
 		"rFN": 0,
 		"uCM": 0
 		},
+	"\/mdwa\/.gitignore": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/mdwa\/.gitignore",
+		"oF": 0
+		},
+	"\/mdwa\/node_modules": {
+		"ft": 65536,
+		"oA": 2,
+		"oAP": "\/build\/mdwa\/node_modules",
+		"oF": 0
+		},
+	"\/mdwa\/package-lock.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/mdwa\/package-lock-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/mdwa\/package.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/mdwa\/package-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/mdwa\/public\/favicon.ico": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/mdwa\/public\/favicon.ico",
+		"oF": 0
+		},
+	"\/mdwa\/public\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/mdwa\/public\/index.html",
+		"oF": 0
+		},
+	"\/mdwa\/public\/manifest.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/mdwa\/public\/manifest-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/mdwa\/README.md": {
+		"cB": 0,
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"oA": 0,
+		"oAP": "\/mdwa\/README.html",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
+		},
+	"\/mdwa\/src\/App.css": {
+		"aP": 0,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 2,
+		"oAP": "\/mdwa\/src\/App-ck.css",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/mdwa\/src\/App.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/mdwa\/src\/min\/App-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/mdwa\/src\/App.test.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/mdwa\/src\/min\/App.test-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/mdwa\/src\/components\/Editor.css": {
+		"aP": 0,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 2,
+		"oAP": "\/mdwa\/src\/components\/Editor-ck.css",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/mdwa\/src\/components\/Editor.jsx": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/mdwa\/src\/components\/min\/Editor-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/mdwa\/src\/components\/Progress.css": {
+		"aP": 0,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 2,
+		"oAP": "\/mdwa\/src\/components\/Progress-ck.css",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/mdwa\/src\/components\/Progress.jsx": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/mdwa\/src\/components\/min\/Progress-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/mdwa\/src\/index.css": {
+		"aP": 0,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 2,
+		"oAP": "\/mdwa\/src\/index-ck.css",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/mdwa\/src\/index.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/mdwa\/src\/min\/index-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/mdwa\/src\/logo.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/mdwa\/src\/logo.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/mdwa\/src\/registerServiceWorker.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/mdwa\/src\/min\/registerServiceWorker-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/media\/MDWA Press Kit.zip": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/media\/MDWA Press Kit.zip",
 		"oF": 0
+		},
+	"\/media\/MDWA Press Kit\/Author - Manuel Ebert.jpg": {
+		"ft": 16384,
+		"iS": 1262310,
+		"oA": 0,
+		"oAP": "\/media\/MDWA Press Kit\/Author - Manuel Ebert.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/media\/MDWA Press Kit\/Failing Animation.gif": {
+		"ft": 4194304,
+		"iS": 404993,
+		"oA": 0,
+		"oAP": "\/media\/MDWA Press Kit\/Failing Animation.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/media\/MDWA Press Kit\/MDWA Banner.png": {
+		"ft": 32768,
+		"iS": 153014,
+		"oA": 0,
+		"oAP": "\/media\/MDWA Press Kit\/MDWA Banner.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/media\/MDWA Press Kit\/MDWA Coffee shop.jpg": {
+		"ft": 16384,
+		"iS": 1287779,
+		"oA": 0,
+		"oAP": "\/media\/MDWA Press Kit\/MDWA Coffee shop.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/media\/MDWA Press Kit\/MDWA Icon.png": {
+		"ft": 32768,
+		"iS": 12082,
+		"oA": 0,
+		"oAP": "\/media\/MDWA Press Kit\/MDWA Icon.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/media\/MDWA Press Kit\/MDWA Logo.png": {
+		"ft": 32768,
+		"iS": 146963,
+		"oA": 0,
+		"oAP": "\/media\/MDWA Press Kit\/MDWA Logo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/media\/MDWA Press Kit\/MDWA Logo.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/media\/MDWA Press Kit\/MDWA Logo.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/media\/MDWA Press Kit\/Writing Screenshot.png": {
+		"ft": 32768,
+		"iS": 382482,
+		"oA": 0,
+		"oAP": "\/media\/MDWA Press Kit\/Writing Screenshot.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/README.md": {
 		"cB": 0,
@@ -490,6 +751,7 @@
 	"animateCSSInjections": 1,
 	"autoBuildNewItems": 1,
 	"autoprefixerBrowserString": "> 1%, last 2 versions, Firefox ESR, Opera 12.1",
+	"autoprefixerEnableIEGrid": 0,
 	"babelAuxiliaryCommentAfter": "",
 	"babelAuxiliaryCommentBefore": "",
 	"babelConfigFileHandlingType": 0,
@@ -1053,6 +1315,10 @@
 		"id-match": {
 			"active": 0,
 			"optionString": "'^[a-z]+([A-Z][a-z]+)*$', {'properties': false, 'onlyDeclarations': true}"
+			},
+		"implicit-arrow-linebreak": {
+			"active": 0,
+			"optionString": "'beside'"
 			},
 		"indent": {
 			"active": 0,

@@ -1,0 +1,15 @@
+
+.progress {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 4px;
+    width: 100%;
+}
+
+.progress div {
+    height: 4px;
+    box-shadow: -1px 1px 4px green;
+    background: blue;
+    transition: all .3s ease-out;
+}
