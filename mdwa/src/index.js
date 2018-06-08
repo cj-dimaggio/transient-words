@@ -4,5 +4,5 @@ import './styles/main.scss';
 import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App type="words" limit={10} />, document.getElementById('root'));
 registerServiceWorker();

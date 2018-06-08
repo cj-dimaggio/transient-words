@@ -1,14 +1,39 @@
-
-.progress {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    height: 4px;
+.content
+    {
     width: 100%;
-}
-.progress div {
-    height: 4px;
-    box-shadow: -1px 1px 4px red;
-    background: red;
-    transition: all .3s ease-out;
-}
+    max-width: 600px;
+    margin: 0px auto;
+
+    height: calc(100% - 1px);
+    margin: 0px auto;
+    padding-top: 1px;
+    }
+
+.app
+    {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: $white;
+    color: $grey;
+    font-weight: 400;
+
+    &.night-mode
+        {
+        background: $dark;
+        color: $off-white;
+        i.icon-night-mode {transform: rotate(180deg);}
+        }
+
+    .buttons
+        {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: $reg;
+        i { opacity: .2; cursor: pointer; display: inline-block;}
+        i:hover { opacity: 1; }
+        }
+
+    }
+
