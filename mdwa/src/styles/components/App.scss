@@ -18,6 +18,19 @@
     color: $grey;
     font-weight: 400;
 
+    &.danger {
+        box-shadow: inset 0px 0px 40px 2px $red;
+        transition: box-shadow 3s ease-in
+    }
+
+    .content .writeButton
+        {
+        position: fixed;
+        left: 0;
+        bottom: 40px;
+        width: 100%;
+        }
+
     &.night-mode
         {
         background: $dark;

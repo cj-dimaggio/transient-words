@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/main.scss';
-import App from './components/App';
+import MDWA from './components/MDWA';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App type="words" limit={10} />, document.getElementById('root'));
+ReactDOM.render(<MDWA />, document.getElementById('root'));
 registerServiceWorker();

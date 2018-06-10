@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import Fullscreen from "react-full-screen";
 
-
 import Progress from './Progress';
 import WordCount from './WordCount';
 import WriteButton from './WriteButton';
+import Failure from './Failure';
+import Download from './Download';
 import Editor from './Editor';
 
-export default class App extends Component {
+export default class WritingApp extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -20,19 +21,25 @@ export default class App extends Component {
       timeSinceStroke: 0,
       danger: false,
       won: false,
-      fade: 2,
-      kill: 5,
+      lost: false,
+      fade: .1,
+      kill: 1,
+      limit: this.props.limit,
+      type: this.props.type,
+      hardcore: this.props.hardcore
     };
 
     this.handleStroke = this.handleStroke.bind(this);
 
+    this.reset = this.reset.bind(this);
     this.toggleFullscreen = this.toggleFullscreen.bind(this);
     this.toggleNightMode = this.toggleNightMode.bind(this);
     this.now = this.now.bind(this);
+    this.editor = React.createRef();
   }
 
   startWriting() {
-    console.log("running")
+
     this.setState({
       run: true,
       startTime: this.now(),
@@ -45,26 +52,26 @@ export default class App extends Component {
   }
 
   toggleFullscreen() {
-    console.log("going full")
     this.setState((prevState, props) => ({ fullscreen: !prevState.fullscreen }));
   }
 
-  handleStroke(char, words) {
-    if (!this.state.run) this.startWriting();
+  handleStroke(char, text) {
+    if (!this.state.run && !this.state.won) this.startWriting();
     this.toggleDanger(false);
+    const words = text.split(/\s+/).length;
     this.setState({
+      text,
       words,
       timeSinceStroke: 0
     });
   }
 
   stopWriting() {
-    clearInterval(this.timerID);
+    clearInterval(this.state.timerID);
   }
 
   toggleDanger(on) {
     if (this.state.danger === on) return;
-    console.log("Danger", on);
     this.setState({danger: on});
   }
 
@@ -73,10 +80,34 @@ export default class App extends Component {
   }
 
   win() {
+    this.stopWriting();
     this.setState({
       won: true,
       run: false
     })
+  }
+
+  fail() {
+    this.stopWriting();
+    this.setState({lost: true})
+  }
+
+  reset(type, limit, hardcore) {
+    console.log("try again")
+    this.setState({
+      type,
+      limit,
+      hardcore,
+      won: false,
+      lost: false,
+      run: false,
+      startTime: null,
+      progress: 0,
+      timeSinceStroke: 0,
+      danger: false,
+      words: 0
+    });
+    this.editor.current && this.editor.current.reset();
   }
 
   tick() {
@@ -86,12 +117,15 @@ export default class App extends Component {
       timeSinceStroke,
       startTime,
       fade,
-      kill ,
+      type,
+      limit,
+      kill,
     } = this.state;
     if (!run) return;
     const danger = timeSinceStroke >= fade;
+    if (timeSinceStroke >= kill) return this.fail();
     const duration = this.now() - startTime;
-    const progress = (this.props.type === "timed" ? duration : words) / this.props.limit;
+    const progress = (type === "timed" ? duration / 60.0 : words) / limit;
     if (progress >= 1) this.win();
 
     this.setState((prevState, props) => ({
@@ -103,29 +137,42 @@ export default class App extends Component {
   }
 
   render() {
-    const appClass = classNames('app', {
-      'night-mode': this.state.nightMode
-    });
     const {
       fullscreen,
       progress,
       danger,
       won,
-      run
+      lost,
+      limit,
+      type,
+      words,
+      text,
+      nightMode
     } = this.state;
+    const appClass = classNames('app', {
+      'night-mode': nightMode,
+      danger: danger
+    });
     return (
       <Fullscreen enabled={fullscreen} >
         <div className={appClass} >
+          <Failure active={lost} words={words} limit={limit} type={type} onReset={this.reset}/>
           <Progress progress={progress} won={won} danger={danger} />
           <div className="buttons">
-              <i className="icon-night-mode" onClick={this.toggleNightMode}></i>
-              <i className="icon-fullscreen" onClick={this.toggleFullscreen}></i>
+            {won && <Download count={words} text={text} /> }
+            <i className="icon-night-mode" onClick={this.toggleNightMode}></i>
+            <i className="icon-fullscreen" onClick={this.toggleFullscreen}></i>
           </div>
-          <div className="content">
-            <Editor won={won} onStroke={this.handleStroke} onNightMode={this.toggleNightMode} />
-            <WriteButton style="red ghost" />
-            <WordCount count={this.state.words} />
-          </div>
+          {!lost && (
+            <div className="content">
+              <Editor ref={this.editor} won={won} onStroke={this.handleStroke} onNightMode={this.toggleNightMode} />
+              {
+                won
+                ? <WriteButton small ghost label="Start Again" onSubmit={this.reset} />
+                : <WordCount count={words} />
+              }
+            </div>
+          )}
         </div>
       </Fullscreen>
     );

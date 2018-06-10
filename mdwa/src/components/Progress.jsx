@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 var classNames = require('classnames');
 
-export default class Progress extends React.Component {
-  render() {
-    var style = { width: this.props.progress * 100 + '%'};
+const Progress = ({progress, danger, won}) => {
+    var style = { width: progress * 100 + '%'};
     var classes = classNames('progress', {
-      danger: this.props.danger,
-      won: this.props.won
+      danger: danger,
+      won: won
     });
     return (
       <div className={classes}>
         <div style={style}></div>
       </div>
     )
-  }
 }
+
+export default Progress;

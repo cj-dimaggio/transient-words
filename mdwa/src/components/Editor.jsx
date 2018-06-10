@@ -4,19 +4,23 @@ import classNames from 'classnames';
 export default class Editor extends Component {
   constructor(props) {
     super(props);
+    this.onChange = this.onChange.bind(this);
     this.onStroke = this.onStroke.bind(this);
     this.onScroll = this.onScroll.bind(this);
     this.input = React.createRef();
     this.wrapper = React.createRef();
     this.state = {
       cutTop: false,
-      cutBottom: false
+      cutBottom: false,
+      text: ""
     }
 
-    this.invalid_chars = [8, 9, 13, 16, 17, 18, 20, 27, 37, 38, 39, 40, 91, 93];
-    this.control_keys = [65, 67, 86, 88];
-    this.key_replace = {96: "0", 97: "1", 98: "2", 99: "3", 100: "4", 101: "5", 102: "6", 103: "7", 104: "8", 105: "9", 106: "*", 107: "+", 109: "-", 110: ".", 111: "/", 186: ";", 187: "=", 188: ",", 189: "-", 190: ".", 191: "/", 222: "'"};
-    this.shift_replace = {",": "<", ".": ">", "/": "?", ";": ":", "'": "\"", "1": "!", "2": "@", "3": "#", "4": "$", "5": "%", "6": "^", "7": "&", "8": "*", "9": "(", "0": ")", "-": "_", "=": "+"};
+    this.invalid_chars = [
+      'Backspace', 'Tab', 'Enter', 'Control', 'Alt', 'Meta', 'Escape',
+      'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight',
+      'CapsLock', 'Shift', 'Delete'
+    ];
+    this.control_keys = ['a', 'c', 'v', 'x', 'f'];
   }
 
   onScroll(event) {
@@ -25,28 +29,33 @@ export default class Editor extends Component {
     this.setState({
       cutTop: scrollTop > 0,
       cutBottom: scrollHeight - 10 > height + scrollTop && scrollHeight > height
-    })
+    });
+  }
+
+  onChange(event) {
+    this.setState({text: event.target.value});
   }
 
   onStroke(event) {
     const key = event.key;
-    const charCode = event.keyCode || event.which;
     const ctrl = event.ctrlKey || event.metaKey;
     const alt = event.metaKey || event.altKey;
 
-    if (this.invalid_chars.includes(charCode)) return;
-    if (!this.props.won && ctrl && this.control_keys.includes(charCode)) {
+    if (this.invalid_chars.includes(key) || event.repeat) return;
+    if (!this.props.won && ctrl && this.control_keys.includes(key)) {
       event.preventDefault();
       return;
     }
 
-    const words = event.target.value.split(/\s+/).length;
-
-    if (ctrl && alt && [78, 192].includes(charCode)) {
+    if (ctrl && alt && key === 'n') {
       this.props.onNightMode();
     } else {
-      this.props.onStroke(key, words);
+      this.props.onStroke(key, this.state.text);
     }
+  }
+
+  reset() {
+    this.setState({ cutTop: false, cutBottom: false, text: ""});
   }
 
   render() {
@@ -60,8 +69,10 @@ export default class Editor extends Component {
           placeholder="Start typing..."
           spellCheck="false"
           onKeyDown={this.onStroke}
+          onChange={this.onChange}
           onScroll={this.onScroll}
           ref={this.input}
+          value={this.state.text}
         ></textarea>
       </div>
     )
