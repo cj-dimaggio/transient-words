@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import classNames from 'classnames';
 import Fullscreen from "react-full-screen";
 
@@ -8,26 +8,11 @@ import WriteButton from './WriteButton';
 import Failure from './Failure';
 import Download from './Download';
 import Editor from './Editor';
+import {AppContext} from './AppContext';
 
-export default class WritingApp extends Component {
+export default class WritingApp extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      run: false,
-      startTime: null,
-      fullscreen: false,
-      nightMode: false,
-      progress: 0,
-      timeSinceStroke: 0,
-      danger: false,
-      won: false,
-      lost: false,
-      fade: .1,
-      kill: 1,
-      limit: this.props.limit,
-      type: this.props.type,
-      hardcore: this.props.hardcore
-    };
 
     this.handleStroke = this.handleStroke.bind(this);
 
@@ -36,6 +21,26 @@ export default class WritingApp extends Component {
     this.toggleNightMode = this.toggleNightMode.bind(this);
     this.now = this.now.bind(this);
     this.editor = React.createRef();
+
+    this.state = {
+      run: false,
+      startTime: null,
+      fullscreen: false,
+      nightMode: localStorage.getItem("mdwa.night-mode") === "true",
+      progress: 0,
+      timeSinceStroke: 0,
+      danger: false,
+      won: false,
+      lost: false,
+      fade: 2,
+      kill: 5,
+      limit: this.props.limit || 5,
+      type: this.props.type || "timed",
+      hardcore: this.props.hardcore,
+
+      onReset: this.reset,
+      toggleHelp: this.props.onHelp,
+    };
   }
 
   startWriting() {
@@ -48,6 +53,7 @@ export default class WritingApp extends Component {
   }
 
   toggleNightMode() {
+    localStorage.setItem("mdwa.night-mode", !this.state.nightMode);
     this.setState((prevState, props) => ({ nightMode: !prevState.nightMode }));
   }
 
@@ -93,7 +99,6 @@ export default class WritingApp extends Component {
   }
 
   reset(type, limit, hardcore) {
-    console.log("try again")
     this.setState({
       type,
       limit,
@@ -139,13 +144,9 @@ export default class WritingApp extends Component {
   render() {
     const {
       fullscreen,
-      progress,
       danger,
       won,
       lost,
-      limit,
-      type,
-      words,
       text,
       nightMode
     } = this.state;
@@ -155,25 +156,33 @@ export default class WritingApp extends Component {
     });
     return (
       <Fullscreen enabled={fullscreen} >
-        <div className={appClass} >
-          <Failure active={lost} words={words} limit={limit} type={type} onReset={this.reset}/>
-          <Progress progress={progress} won={won} danger={danger} />
-          <div className="buttons">
-            {won && <Download count={words} text={text} /> }
-            <i className="icon-night-mode" onClick={this.toggleNightMode}></i>
-            <i className="icon-fullscreen" onClick={this.toggleFullscreen}></i>
-          </div>
-          {!lost && (
-            <div className="content">
-              <Editor ref={this.editor} won={won} onStroke={this.handleStroke} onNightMode={this.toggleNightMode} />
-              {
-                won
-                ? <WriteButton small ghost label="Start Again" onSubmit={this.reset} />
-                : <WordCount count={words} />
-              }
+        <AppContext.Provider value={this.state}>
+          <div className={appClass} >
+            <Failure />
+            <Progress />
+            <div className="buttons">
+              {won && <Download text={text} /> }
+              <i className="icon-night-mode" onClick={this.toggleNightMode}></i>
+              <i className="icon-fullscreen" onClick={this.toggleFullscreen}></i>
             </div>
-          )}
-        </div>
+            {!lost && (
+              <div className="content">
+                <Editor
+                  ref={this.editor}
+                  won={won}
+                  onStroke={this.handleStroke}
+                  onNightMode={this.toggleNightMode}
+                  onFullScreen={this.toggleFullscreen}
+                />
+                {
+                  won
+                  ? <WriteButton small ghost hidePanel label="Start Again" onSubmit={this.reset} />
+                  : <WordCount />
+                }
+              </div>
+            )}
+          </div>
+        </AppContext.Provider>
       </Fullscreen>
     );
   }

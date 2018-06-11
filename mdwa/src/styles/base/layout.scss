@@ -6,10 +6,10 @@ body
     background: $white;
     }
 
-.space-xl { height: 120px; }
-.space-l { height: 80px; }
-.space-m { height: 40px; }
-.space-s { height: 20px; }
+.space, .space.m { height: 40px; }
+.space.xl { height: 120px; }
+.space.l { height: 80px; }
+.space.s { height: 20px; }
 
 html { font-size: 1em; }
 html, body { height: 100%; margin: 0px; padding: 0px; }
@@ -29,5 +29,42 @@ html, body { height: 100%; margin: 0px; padding: 0px; }
             background: $color;
             color: $white;
             }
+        }
+}
+
+
+.navButton {
+    font-size: $small;
+    opacity: .6;
+    display: inline-block;
+    &:hover {opacity: 1;}
+    cursor: pointer;
+    color: $light-grey;
+    text-decoration: none;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    &:before
+        {
+        content: '\3f';
+        font-family: "mdwa";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 80%;
+        speak: none;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 2px solid $light-grey;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 20px;
+        margin: -2px 6px 0 0;
+        }
+    &.white
+        {
+        color: $white;
+        &:before {border: 1px solid $white;}
         }
 }

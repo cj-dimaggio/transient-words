@@ -1,5 +1,6 @@
 import React from 'react';
 import FileSaver from 'file-saver';
+import {AppContext} from './AppContext';
 
 export default class Download extends React.Component {
   constructor(props) {
@@ -18,7 +19,12 @@ export default class Download extends React.Component {
   }
 
   render() {
-    const count = this.props.count || 0;
-    return <button onClick={this.download} className="tiny light ghost">Download { count } { count === 1 ? "word" : "words" }</button>
+    return (
+      <AppContext.Consumer>
+      { ({words}) =>
+        <button onClick={this.download} className="tiny light ghost">Download { words || 0 } { words === 1 ? "word" : "words" }</button>
+      }
+      </AppContext.Consumer>
+    )
   }
 }

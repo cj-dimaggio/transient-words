@@ -17,10 +17,10 @@
     background: $white;
     color: $grey;
     font-weight: 400;
-
+    transition: box-shadow .1s ease-in;
     &.danger {
         box-shadow: inset 0px 0px 40px 2px $red;
-        transition: box-shadow 3s ease-in
+        transition: box-shadow 3s ease-in;
     }
 
     .content .writeButton

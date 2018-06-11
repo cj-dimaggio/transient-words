@@ -15,6 +15,7 @@ export default class WriteButton extends React.Component {
     this.onExpand = this.onExpand.bind(this);
     this.setLimit = this.setLimit.bind(this);
     this.setType = this.setType.bind(this);
+    this.toggleHardcore = this.toggleHardcore.bind(this);
     this.showPanel = this.showPanel.bind(this);
   }
 
@@ -36,17 +37,10 @@ export default class WriteButton extends React.Component {
     )
   }
 
-  showPanel() {
-    this.setState({hidePanel: false});
-  }
-
-  setLimit(limit) {
-    this.setState({limit});
-  }
-
-  setType(type) {
-    this.setState({type});
-  }
+  showPanel() { this.setState({hidePanel: false}); }
+  setLimit(limit) { this.setState({limit}); }
+  setType(type) { this.setState({type}); }
+  toggleHardcore(hardcore) { this.setState((prevState, props) => ({ hardcore: !prevState.hardcore })); }
 
   renderOptions() {
     const options = this.state.type === "timed" ? this.props.time_limits : this.props.word_limits;
@@ -70,9 +64,7 @@ export default class WriteButton extends React.Component {
           <div className="radios">
             { this.renderOptions() }
           </div>
-          <div className="tab-hardcore">
-            <input type="checkbox" id="hardcore-check" /><label htmlFor="hardcore-check">Hardcore mode</label>
-          </div>
+            <div onClick={this.toggleHardcore} className={classNames('hardcore', {checked: this.state.hardcore})}>Hardcore mode</div>
         </div>
       </div>
     )
@@ -103,7 +95,7 @@ export default class WriteButton extends React.Component {
 WriteButton.defaultProps = {
   label: "Start Writing",
   small: false,
-  hidePanel: true,
+  hidePanel: false,
   time_limits: [3, 5, 10, 20, 30, 60],
   word_limits: [75, 150, 250, 500, 1667]
 }

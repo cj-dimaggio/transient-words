@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
+import {AppContext} from './AppContext';
 
 export default class Editor extends Component {
   constructor(props) {
     super(props);
     this.onChange = this.onChange.bind(this);
     this.onStroke = this.onStroke.bind(this);
+    this.clearLetter = this.clearLetter.bind(this);
     this.onScroll = this.onScroll.bind(this);
     this.input = React.createRef();
     this.wrapper = React.createRef();
     this.state = {
       cutTop: false,
       cutBottom: false,
-      text: ""
+      text: "",
+      letter: "",
+      timerId: null
     }
 
     this.invalid_chars = [
@@ -32,6 +36,10 @@ export default class Editor extends Component {
     });
   }
 
+  componentDidMount(){
+   this.input.current.focus();
+  }
+
   onChange(event) {
     this.setState({text: event.target.value});
   }
@@ -47,11 +55,24 @@ export default class Editor extends Component {
       return;
     }
 
+
     if (ctrl && alt && key === 'n') {
       this.props.onNightMode();
+    } else if (ctrl && alt && key === 'f') {
+      this.props.onFullScreen();
     } else {
+      clearInterval(this.state.timerId);
+      this.setState({
+        letter: key,
+        timerId: setInterval(this.clearLetter, 200),
+      });
       this.props.onStroke(key, this.state.text);
     }
+  }
+
+  clearLetter() {
+    clearInterval(this.state.timerId);
+    this.setState({letter: ""})
   }
 
   reset() {
@@ -59,22 +80,29 @@ export default class Editor extends Component {
   }
 
   render() {
-    const classes = classNames('editor', {
-      'cut-top': this.state.cutTop,
-      'cut-bottom': this.state.cutBottom,
-    })
     return (
-      <div className={classes} ref={this.wrapper}>
-        <textarea
-          placeholder="Start typing..."
-          spellCheck="false"
-          onKeyDown={this.onStroke}
-          onChange={this.onChange}
-          onScroll={this.onScroll}
-          ref={this.input}
-          value={this.state.text}
-        ></textarea>
-      </div>
+      <AppContext.Consumer>{ ({danger, hardcore, won}) =>
+        <div
+          className={classNames('editor', {
+            danger,
+            hardcore: hardcore && !won,
+            'cut-top': this.state.cutTop,
+            'cut-bottom': this.state.cutBottom,
+          })}
+         ref={this.wrapper}
+        >
+          {hardcore && <div className="hardcore" >{this.state.letter}</div> }
+          <textarea
+            placeholder="Start typing..."
+            spellCheck="false"
+            onKeyDown={this.onStroke}
+            onChange={this.onChange}
+            onScroll={this.onScroll}
+            ref={this.input}
+            value={this.state.text}
+          ></textarea>
+        </div>
+      }</AppContext.Consumer>
     )
   }
 }

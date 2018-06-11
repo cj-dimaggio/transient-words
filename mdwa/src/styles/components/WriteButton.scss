@@ -15,6 +15,7 @@ button
     margin: 0px auto;
     padding: 12px 40px;
     text-decoration: none !important;
+    font-family: Lato;
     font-size: $reg;
     font-weight: 700 !important;
     display: inline-block;
@@ -47,6 +48,7 @@ button
     position: absolute;
     bottom: 50px;
     font-size: $xsmall;
+    user-select: none;
     .full, .compact
         {
         text-align: center;
@@ -92,39 +94,29 @@ button
     input[type=checkbox] {
     }
 
-    .tab-hardcore
-        {
-            label { cursor: pointer; }
-            input { display: none; }
-            margin: 15px 0;
-        }
-    #hardcore-check
+    .hardcore
         {
         cursor: pointer;
-        background: none;
-        display: inline-block;
-        margin-right: 10px;
-        visibility: hidden;
-        }
-    #hardcore-check:before
-        {
-        content: "";
-        visibility: visible;
-        width: 13px;
-        height: 13px;
-        margin-top: -2px;
-        border: 1px solid $off-off-white;
-        display: inline-block;
-        position: absolute;
-        }
-    #hardcore-check:checked:before
-        {
-        border-color: $white;
-        background: $white;
-        box-shadow: inset 0px 0px 0px 2px $light-grey;
-        }
+        margin: 15px 0;
 
-    #hardcore-check:checked + label { color: $white;}
+        &:before
+            {
+            content: "";
+            vertical-align: middle;
+            width: 13px;
+            height: 13px;
+            margin-right: 4px;
+            border: 1px solid $off-off-white;
+            display: inline-block;
+            }
+        &.checked { color: $white;}
+        &.checked:before
+            {
+            border-color: $white;
+            background: $white;
+            box-shadow: inset 0px 0px 0px 2px $light-grey;
+            }
+        }
 
     .radio
         {

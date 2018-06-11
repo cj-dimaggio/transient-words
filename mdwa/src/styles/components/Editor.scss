@@ -22,6 +22,7 @@
         caret-color: red;
         font-size: 14pt;
         resize: none;
+        transition: all .1s linear;
         &::selection
             {
             color: white;
@@ -30,6 +31,33 @@
         &::-webkit-scrollbar { display: none; }
         }
 
+    &.danger textarea
+        {
+        color: $red;
+        transition: all 3s linear;
+        filter: blur(2px);
+        }
+
+
+    &.hardcore textarea:not(:empty)
+        {
+        filter: blur(8px);
+        }
+
+    .hardcore
+        {
+        font-size: 300pt;
+        font-family: Merriweather;
+        text-align: center;
+        color: $grey;
+        width: 100%;
+        // max-width: 600px;
+        position: absolute;
+        height: calc(100% - 60px);
+        margin: 0px auto;
+        box-sizing: border-box;
+        pointer-events: none;
+        }
 
     &:before, &:after
         {
@@ -58,6 +86,7 @@
 .app.night-mode .editor
     {
     textarea { color: $off-white; }
+    .hardcore { color: $off-white; }
     &.cut-top:before { background: linear-gradient(to bottom, $dark 0%, transparent 100%); }
     &.cut-bottom:after { background: linear-gradient(to bottom, transparent 0%, $dark 100%); }
     }

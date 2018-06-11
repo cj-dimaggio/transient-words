@@ -1,29 +1,34 @@
 import React, { Component } from 'react';
+import Welcome from './Welcome';
+import Help from './Help';
 import WritingApp from './App';
 
 
 export default class MDWA extends Component {
   constructor(props) {
     super(props);
-    this.run = this.run.bind(this);
+    this.toggleHelp = this.toggleHelp.bind(this);
+    this.toggleHome = this.toggleHome.bind(this);
+    this.toggleWrite = this.toggleWrite.bind(this);
     this.state = {
-      limit: 5,
-      type: "words",
-      hardcore: false
+      screen: 'home'
     }
   }
 
-  run(type, limit, hardcore) {
-    console.log("in run")
-    this.setState({type, limit, hardcore})
+  toggleHelp() { this.setState({screen: 'help' })}
+  toggleHome() { this.setState({screen: 'home' })}
+  toggleWrite(type, limit, hardcore) {
+    console.log("Ready to write", type, limit, hardcore)
+    this.setState({type, limit, hardcore, screen: 'write'});
   }
 
-
   render() {
-    const {limit, type} = this.state;
+    const { screen } = this.state;
     return (
       <div>
-        <WritingApp limit={limit} type={type} onReset={this.run} />
+        { screen === "home" && <Welcome onHelp={this.toggleHelp} onWrite={this.toggleWrite} /> }
+        { screen === "write" && <WritingApp onHelp={this.toggleHelp} {...this.state} /> }
+        { screen === "help" && <Help onWrite={this.toggleWrite} onBack={this.toggleHome} /> }
       </div>
     )
   }
