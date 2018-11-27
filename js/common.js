@@ -61,7 +61,20 @@
       `);
       btn.parent().prepend($chooser);
       if (settings.hidden) {
-        btn.on("mouseenter", function() {$chooser.fadeIn();});
+        let chooserExpireTimer = null;
+        let closeChooserAfterDelay = function () {
+            clearTimeout(chooserExpireTimer);
+            chooserExpireTimer = setTimeout(function () {
+                $chooser.fadeOut();
+            }, 5000);
+        };
+        btn.on("mouseenter", function() {
+          $chooser.fadeIn();
+          closeChooserAfterDelay()
+        });
+        $chooser.on("mouseenter mousemove mouseleave", function () {
+            closeChooserAfterDelay()
+        });
       }
       let set_url = function() {
         let limit = $chooser.find("input[type=radio]:checked").val()
