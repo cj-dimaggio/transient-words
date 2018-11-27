@@ -10,7 +10,8 @@
     };
 
   $.fn.write_button = function(options){
-    let settings = $.extend({}, defaults, options),
+    let user_settings = JSON.parse(localStorage.getItem('mdwa.settings') || "{}");
+    let settings = $.extend({}, defaults, user_settings, options),
         el = $(this);
 
     el.each(function() {
@@ -66,7 +67,12 @@
       let set_url = function() {
         let limit = $chooser.find("input[type=radio]:checked").val()
         let hardcore = $chooser.find("#hardcore-check")[0].checked ? "&hardcore=true" : "";
-        btn.attr('href', `${url}?limit=${limit}${hardcore}`)
+        btn.attr('href', `${url}?limit=${limit}${hardcore}`);
+        localStorage.setItem('mdwa.settings', JSON.stringify({
+            type: limit.substring(limit.length - 3, limit.length) === "min" ? 'timed' : 'words',
+            limit: parseInt(limit),
+            hardcore: $chooser.find("#hardcore-check")[0].checked
+        }));
       }
       $chooser.find("input").on('change', set_url);
       $chooser.find(".tabs .words").bind('click', function () {
