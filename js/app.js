@@ -66,7 +66,8 @@ let update_progress = function () {
 }
 
 let update_stats = function () {
-  words = $input.val().split(/\s+/).length;
+  let text = $input.val().trim()
+  words = text.length && text.split(/\s+/).length;
   $wordcount.text(words + (words == 1 ? " word" : " words"));
 };
 
