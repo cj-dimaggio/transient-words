@@ -96,6 +96,6 @@ WriteButton.defaultProps = {
   label: "Start Writing",
   small: false,
   hidePanel: false,
-  time_limits: [3, 5, 10, 20, 30, 60],
+  time_limits: [3, 5, 10, 15, 20, 30, 60],
   word_limits: [75, 150, 250, 500, 1667]
 }

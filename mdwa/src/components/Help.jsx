@@ -77,7 +77,7 @@ const Help = ({onWrite, onBack}) => {
         <p>No, all your writing is private and not submitted to or stored on any server.</p>
 
         <h2>Press Kit</h2>
-        <p>If you would like to write about <abbr title="The Most Dangerous Writing App">MDWA</abbr>, please use the media in the <a href="media/MDWA Press Kit.zip">press kit</a> provided. </p>
+        <p>If you would like to write about <abbr title="The Most Dangerous Writing App">MDWA</abbr>, please use the media in the <a href="%PUBLIC_URL%/MDWA Press Kit.zip">press kit</a> provided. </p>
         <p>I'm happy to answer your questions over <a href="mailto:manuel@1450.me?subject=The%20Most%20Dangerous%20Writing%20App">e-mail</a> or <a href="https://www.twitter.com/maebert" rel="noopener noreferrer" target="_blank" title="Manuel Ebert">twitter</a>, too.</p>
 
         <Space l />
