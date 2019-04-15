@@ -23,7 +23,7 @@ const Help = ({onWrite, onBack}) => {
         url: "https://www.wired.com/2016/03/sadistic-writing-app-deletes-work-stop-typing/"
       },
       {
-        text: "@maebert has created the writer&#39;s nightmare machine.",
+        text: "@maebert has created the writer's nightmare machine.",
         author: "@danhklein",
         url: "https://twitter.com/danhklein/status/704701084908978176"
       },
@@ -58,7 +58,7 @@ const Help = ({onWrite, onBack}) => {
 
       <h2>Word on the street?</h2>
 
-      <p><abbr title="The Most Dangerous Writing App">MDWA</abbr> has been featured on
+      <p><abbr title="The Most Dangerous Writing App">MDWA</abbr> has been featured on&nbsp;
         <a href="http://www.wired.com/2016/03/sadistic-writing-app-deletes-work-stop-typing/" title="Wired">Wired</a>,&nbsp;
         <a href="http://lifehacker.com/the-most-dangerous-writing-app-destroys-your-progress-1762981262" title="Lifehacker">Lifehacker</a>,&nbsp;
         <a href="http://thenextweb.com/apps/2016/03/07/this-writing-app-will-delete-your-work-if-you-stop-typing/" title="The Next Web">The Next Web</a>,&nbsp;
@@ -77,7 +77,7 @@ const Help = ({onWrite, onBack}) => {
         <p>No, all your writing is private and not submitted to or stored on any server.</p>
 
         <h2>Press Kit</h2>
-        <p>If you would like to write about <abbr title="The Most Dangerous Writing App">MDWA</abbr>, please use the media in the <a href="%PUBLIC_URL%/MDWA Press Kit.zip">press kit</a> provided. </p>
+        <p>If you would like to write about <abbr title="The Most Dangerous Writing App">MDWA</abbr>, please use the media in the <a href="MDWA Press Kit.zip">press kit</a> provided. </p>
         <p>I'm happy to answer your questions over <a href="mailto:manuel@1450.me?subject=The%20Most%20Dangerous%20Writing%20App">e-mail</a> or <a href="https://www.twitter.com/maebert" rel="noopener noreferrer" target="_blank" title="Manuel Ebert">twitter</a>, too.</p>
 
         <Space l />

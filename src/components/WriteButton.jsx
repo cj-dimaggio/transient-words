@@ -39,11 +39,16 @@ export default class WriteButton extends React.Component {
 
   showPanel() { this.setState({hidePanel: false}); }
   setLimit(limit) { this.setState({limit}); }
-  setType(type) { this.setState({type}); }
+  setType(type) {
+    this.setState({
+      type: type,
+      limit: this.props.limits[type][1]
+    });
+  }
   toggleHardcore(hardcore) { this.setState((prevState, props) => ({ hardcore: !prevState.hardcore })); }
 
   renderOptions() {
-    const options = this.state.type === "timed" ? this.props.time_limits : this.props.word_limits;
+    const options = this.props.limits[this.state.type];
     return options.map((limit) => {
       const classes = classNames('radio', {active: limit === this.state.limit});
       return <span key={limit} className={classes} onClick={() => this.setLimit(limit)}>{limit}</span>
@@ -97,5 +102,9 @@ WriteButton.defaultProps = {
   small: false,
   hidePanel: false,
   time_limits: [3, 5, 10, 15, 20, 30, 60],
-  word_limits: [75, 150, 250, 500, 1667]
+  word_limits: [75, 150, 250, 500, 1667],
+  limits: {
+    timed: [3, 5, 10, 15, 20, 30, 60],
+    words: [75, 150, 250, 500, 1667]
+  }
 }
