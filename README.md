@@ -7,8 +7,6 @@
 
 ![Failing](https://cloud.githubusercontent.com/assets/1047165/19895307/94ca8e02-a050-11e6-95d0-42a3fd58437b.gif)
 
-(Image by [lifehacker](http://lifehacker.com/the-most-dangerous-writing-app-destroys-your-progress-1762981262))
-
 ### What people say:
 
 * [@ryanfliss](https://twitter.com/ryanfliss/status/704389331067150337):
