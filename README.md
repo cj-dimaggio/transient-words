@@ -1,5 +1,7 @@
 # The Most Dangerous Writing App
 
+![Version](https://img.shields.io/github/package-json/v/maebert/themostdangerouswritingapp.svg?color=F45653&style=popout-square&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACAAQMAAAD58POIAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAGUExURfRWU//++ixAmzsAAAAqSURBVEjHY2AYBYRA/X84+DfkBX7AfCU/KjAqMCowKjAYBYZRiTsK8AEAVGnHUCe0//MAAAAASUVORK5CYII=)
+
 #### As featured on [Wired](http://www.wired.com/2016/03/sadistic-writing-app-deletes-work-stop-typing/), [Lifehacker](http://lifehacker.com/the-most-dangerous-writing-app-destroys-your-progress-1762981262), [The Next Web](http://thenextweb.com/apps/2016/03/07/this-writing-app-will-delete-your-work-if-you-stop-typing/), [Huffington Post](http://www.huffingtonpost.com/2016/03/07/the-most-dangerous-writing-app-is-a-terrifying-productivity-tool_n_9399844.html), and [PopSugar](https://me.popsugar.com/technology/Why-Most-Dangerous-Writing-App-Make-You-More-Productive-40420571)
 
 > The Most Dangerous Writing App is designed to get you into a state of flow.
