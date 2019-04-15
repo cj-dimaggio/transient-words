@@ -78,6 +78,7 @@
       "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}",
       "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,mjs}"
     ],
+    "setupTestFrameworkScriptFile": "<rootDir>/src/tests/setupTests.js",
     "testEnvironment": "node",
     "testURL": "http://localhost",
     "transform": {
