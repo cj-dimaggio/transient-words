@@ -150,7 +150,10 @@ export default class WritingApp extends React.Component {
       won,
       lost,
       text,
-      nightMode
+      nightMode,
+      limit,
+      type,
+      hardcore
     } = this.state;
     const appClass = classNames('app', {
       'night-mode': nightMode,
@@ -178,7 +181,7 @@ export default class WritingApp extends React.Component {
                 />
                 {
                   won
-                  ? <WriteButton small ghost hidePanel label="Start Again" />
+                  ? <WriteButton small ghost hidePanel label="Start Again" {...{limit, type, hardcore}} />
                   : <WordCount />
                 }
               </div>

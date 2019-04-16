@@ -1,6 +1,6 @@
 {
   "name": "mdwa",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "homepage": "https://www.themostdangerouswritingapp.com",
   "private": true,
   "dependencies": {
@@ -79,7 +79,7 @@
       "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}",
       "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,mjs}"
     ],
-    "setupTestFrameworkScriptFile": "<rootDir>/src/tests/setupTests.js",
+    "setupFilesAfterEnv": ["<rootDir>/src/tests/setupTests.js"],
     "testEnvironment": "node",
     "testURL": "http://localhost",
     "transform": {

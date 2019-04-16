@@ -6,7 +6,7 @@ export default class WriteButton extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hardcore: false,
+      hardcore: this.props.hardcore || false,
       limit: this.props.limit || 5,
       type: this.props.type || "minutes",
       compact: true,
@@ -49,6 +49,10 @@ export default class WriteButton extends React.Component {
 
   renderOptions() {
     const options = this.props.limits[this.state.type];
+    if (this.state.type === this.props.type && !options.includes(this.props.limit)) {
+      options.push(this.props.limit);
+      options.sort((a, b) => a - b);
+    }
     return options.map((limit) => {
       const classes = classNames('radio', {active: limit === this.state.limit});
       return <span key={limit} className={classes} onClick={() => this.setLimit(limit)}>{limit}</span>
