@@ -6,7 +6,7 @@ export const AppContext = React.createContext({
   danger: false,
   limit: 5,
   progres: 0,
-  type: "timed",
+  type: "minutes",
   hardcore: false
 });
 

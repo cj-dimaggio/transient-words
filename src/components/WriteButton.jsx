@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 var classNames = require('classnames');
 
 export default class WriteButton extends React.Component {
@@ -7,7 +8,7 @@ export default class WriteButton extends React.Component {
     this.state = {
       hardcore: false,
       limit: this.props.limit || 5,
-      type: this.props.type || "timed",
+      type: this.props.type || "minutes",
       compact: true,
       hidePanel: this.props.hidePanel
     };
@@ -24,13 +25,12 @@ export default class WriteButton extends React.Component {
   }
 
   renderCompactChooser() {
-    const limit = this.state.limit;
-    const unit = this.state.type === "timed" ? "minutes" : "words";
+    const {limit, type} = this.state;
     return (
       <div className="session-chooser">
         <div className="compact"  onClick={ this.onExpand }>
           Session length:
-          <span className="choice">{limit} {unit} <i className="edit icon-pencil"></i></span>
+          <span className="choice">{limit} {type} <i className="edit icon-pencil"></i></span>
 
         </div>
       </div>
@@ -62,7 +62,7 @@ export default class WriteButton extends React.Component {
       <div className="session-chooser">
         <div className={classes}>
           <div className="tabs">
-              <span className="timed" onClick={() => this.setType("timed")}>Minutes</span>
+              <span className="minutes" onClick={() => this.setType("minutes")}>Minutes</span>
               &nbsp;/&nbsp;
               <span className="words" onClick={() => this.setType("words")}>Words</span>
           </div>
@@ -85,13 +85,16 @@ export default class WriteButton extends React.Component {
     return (
       <div className={wrapperWlasses}>
         { !this.props.noPanel && !this.state.hidePanel && (this.state.compact ? this.renderCompactChooser() : this.renderFullChooser()) }
-        <button
+        <Link
+          to={{
+            pathname: "/write",
+            search: `?limit=${limit}&type=${type}` + (hardcore ? '&hardcore=true' : '')
+          }}
           className={buttonClasses}
           onMouseOver={this.showPanel}
-          onClick={() => {this.props.onSubmit(type, limit, hardcore); }}
         >
           { this.props.label }
-        </button>
+        </Link>
       </div>
     )
   }
@@ -101,10 +104,8 @@ WriteButton.defaultProps = {
   label: "Start Writing",
   small: false,
   hidePanel: false,
-  time_limits: [3, 5, 10, 15, 20, 30, 60],
-  word_limits: [75, 150, 250, 500, 1667],
   limits: {
-    timed: [3, 5, 10, 15, 20, 30, 60],
+    minutes: [3, 5, 10, 15, 20, 30, 60],
     words: [75, 150, 250, 500, 1667]
   }
 }

@@ -14,6 +14,8 @@ export default class WritingApp extends React.Component {
   constructor(props) {
     super(props);
 
+    let {limit, type, hardcore} = this.props;
+
     this.handleStroke = this.handleStroke.bind(this);
 
     this.reset = this.reset.bind(this);
@@ -34,17 +36,13 @@ export default class WritingApp extends React.Component {
       lost: false,
       fade: 2,
       kill: 5,
-      limit: this.props.limit || 5,
-      type: this.props.type || "timed",
-      hardcore: this.props.hardcore,
-
-      onReset: this.reset,
-      toggleHelp: this.props.onHelp,
+      limit: limit,
+      type: type,
+      hardcore: hardcore,
     };
   }
 
   startWriting() {
-
     this.setState({
       run: true,
       startTime: this.now(),
@@ -70,6 +68,10 @@ export default class WritingApp extends React.Component {
       words,
       timeSinceStroke: 0
     });
+  }
+
+  componentDidMount() {
+    console.log("I mounted")
   }
 
   stopWriting() {
@@ -130,7 +132,7 @@ export default class WritingApp extends React.Component {
     const danger = timeSinceStroke >= fade;
     if (timeSinceStroke >= kill) return this.fail();
     const duration = this.now() - startTime;
-    const progress = (type === "timed" ? duration / 60.0 : words) / limit;
+    const progress = (type === "minutes" ? duration / 60.0 : words) / limit;
     if (progress >= 1) this.win();
 
     this.setState((prevState, props) => ({
@@ -176,7 +178,7 @@ export default class WritingApp extends React.Component {
                 />
                 {
                   won
-                  ? <WriteButton small ghost hidePanel label="Start Again" onSubmit={this.reset} />
+                  ? <WriteButton small ghost hidePanel label="Start Again" />
                   : <WordCount />
                 }
               </div>

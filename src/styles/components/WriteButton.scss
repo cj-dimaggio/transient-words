@@ -9,7 +9,7 @@
     &.small .session-chooser {bottom: 35px;}
   }
 
-button
+.writeButton a
     {
     text-align: center;
     margin: 0px auto;
@@ -75,7 +75,7 @@ button
         }
     .full
         {
-        &.timed .tabs span.timed {color: $white; -webkit-font-smoothing: subpixel-antialiased;}
+        &.minutes .tabs span.minutes {color: $white; -webkit-font-smoothing: subpixel-antialiased;}
         &.words .tabs span.words {color: $white; -webkit-font-smoothing: subpixel-antialiased;}
         box-shadow: 0px 2px 5px 1px rgba(0,0,0,.1);
         .tabs
@@ -130,6 +130,7 @@ button
         height: 26px;
         border: 1px solid transparent;
         }
+    .words .radio { margin: 0px 5px; }
     .radio.active
         {
         opacity: 1;

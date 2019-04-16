@@ -1,11 +1,13 @@
 import React from 'react';
 import WriteButton from './WriteButton';
 import Space from './Space';
+import { Link } from "react-router-dom";
 
-const Welcome = ({onWrite, onHelp}) => {
+
+const Welcome = () => {
     return (
       <div className="Welcome">
-        <a className="navButton helpButton" onClick={onHelp}>Help</a>
+        <Link to="/help" className="navButton helpButton">Help</Link>
         <Space xl />
         <div>
           <div className="logo">
@@ -21,7 +23,7 @@ const Welcome = ({onWrite, onHelp}) => {
             Don’t stop typing, or all progress will be lost.<i className="caret icon-cursor"/>
           </h2>
           <Space xl />
-          <WriteButton ghost color="red" onSubmit={onWrite} />
+          <WriteButton ghost color="red" />
         </div>
         <div className="accolades" />
       </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import WriteButton from './WriteButton';
 import Space from './Space';
+import { Link } from "react-router-dom";
 
 const renderQuote = ({text, author, url}) => {
   return (
@@ -15,7 +16,7 @@ const renderQuote = ({text, author, url}) => {
   );
 }
 
-const Help = ({onWrite, onBack}) => {
+const Help = () => {
     const quotes = [
       {
         text: "Sadistic [and] brutal.",
@@ -36,7 +37,7 @@ const Help = ({onWrite, onBack}) => {
 
     return (
       <div className="Help">
-        <a className="navButton backButton" onClick={onBack}>Back</a>
+        <Link to="/" className="navButton backButton">Back</Link>
         <Space l />
         <div className="content">
           <div className="logo small">
@@ -54,7 +55,7 @@ const Help = ({onWrite, onBack}) => {
       <p>Because 'tis better to have written and lost, than never to have written at all.</p>
 
       <Space m />
-      <WriteButton ghost color="red" onSubmit={onWrite} />
+      <WriteButton ghost color="red" />
 
       <h2>Word on the street?</h2>
 

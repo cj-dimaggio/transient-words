@@ -31,7 +31,6 @@ const Failure = ({onReset, toggleHelp, limit, type, lost, words }) => {
             Again."
             type={type}
             limit={limit}
-            onSubmit={onReset}
           />
         </div>
       </div>
