@@ -9,6 +9,8 @@ Below you will find some information on how to perform common tasks, but be sure
 
 ## Deploying
 
+Update the version number in `package.json`, then run
+
 ```
 npm run deploy
 ```

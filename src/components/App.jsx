@@ -70,10 +70,6 @@ export default class WritingApp extends React.Component {
     });
   }
 
-  componentDidMount() {
-    console.log("I mounted")
-  }
-
   stopWriting() {
     clearInterval(this.state.timerID);
   }
