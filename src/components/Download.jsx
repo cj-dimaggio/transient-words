@@ -24,7 +24,7 @@ export default class Download extends React.Component {
     return (
       <AppContext.Consumer>
       { ({words}) =>
-        <button onClick={this.download} className="tiny light ghost">Download { words || 0 } { words === 1 ? "word" : "words" }</button>
+        <button onClick={this.download} className="tiny ghost">Download { words || 0 } { words === 1 ? "word" : "words" }</button>
       }
       </AppContext.Consumer>
     )
