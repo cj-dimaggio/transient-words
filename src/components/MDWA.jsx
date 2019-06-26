@@ -3,7 +3,7 @@ import Welcome from './Welcome';
 import Help from './Help';
 import WritingApp from './App';
 
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
 
 const App = (props) => {
     let params = new URLSearchParams(props.location.search);
