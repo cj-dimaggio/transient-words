@@ -31,3 +31,7 @@
 * [PopSugar](https://me.popsugar.com/technology/Why-Most-Dangerous-Writing-App-Make-You-More-Productive-40420571):
 
   > Spending Time On This App Will Actually Make You More Productive
+
+### Who made this?
+
+<abbr title="The Most Dangerous Writing App">MDWA</abbr> was written by [Manu Ebert](https://www.twitter.com/maebert) over two glasses of wine on a Sunday afternoon and is open source. The domain [themostdangerouswritingapp.com](themostdangerouswritingapp.com) has been acquired by [Squibler](https://www.squibler.io), who now maintain and continue to develop the app. This is the the original version of the app, which will continue to be available at [maebert.github.io/themostdangerouswritingapp](https://maebert.github.io/themostdangerouswritingapp).

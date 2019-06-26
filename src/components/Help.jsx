@@ -146,8 +146,7 @@ const Help = () => {
         </p>
 
         <p>
-          While the app as such is open
-          source software, the domain <a href="https://themostdangerouswritingapp.com">themostdangerouswritingapp.com</a> has been acquired by <a href="https://www.squibler.io" title="Squibler">Squibler</a>, who now maintain and continue to develop the app.{" "}
+          The domain <a href="https://themostdangerouswritingapp.com">themostdangerouswritingapp.com</a> has been acquired by <a href="https://www.squibler.io" title="Squibler">Squibler</a>, who now maintain and continue to develop the app.{" "}
           This is the the original version of the app, which will continue to be available at <a href="https://maebert.github.io/themostdangerouswritingapp">maebert.github.io/themostdangerouswritingapp</a>.
         </p>
 
