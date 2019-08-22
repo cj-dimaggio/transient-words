@@ -2,7 +2,7 @@
 
 ![Version](https://img.shields.io/github/package-json/v/maebert/themostdangerouswritingapp.svg?color=F45653&style=popout-square&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACAAQMAAAD58POIAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAGUExURfRWU//++ixAmzsAAAAqSURBVEjHY2AYBYRA/X84+DfkBX7AfCU/KjAqMCowKjAYBYZRiTsK8AEAVGnHUCe0//MAAAAASUVORK5CYII=)
 
-#### As featured on [Wired](http://www.wired.com/2016/03/sadistic-writing-app-deletes-work-stop-typing/), [Lifehacker](http://lifehacker.com/the-most-dangerous-writing-app-destroys-your-progress-1762981262), [The Next Web](http://thenextweb.com/apps/2016/03/07/this-writing-app-will-delete-your-work-if-you-stop-typing/), [Huffington Post](http://www.huffingtonpost.com/2016/03/07/the-most-dangerous-writing-app-is-a-terrifying-productivity-tool_n_9399844.html), and [PopSugar](https://me.popsugar.com/technology/Why-Most-Dangerous-Writing-App-Make-You-More-Productive-40420571)
+#### As featured on [Wired](https://www.wired.com/2016/03/sadistic-writing-app-deletes-work-stop-typing/), [Lifehacker](https://lifehacker.com/the-most-dangerous-writing-app-destroys-your-progress-1762981262), [The Next Web](https://thenextweb.com/apps/2016/03/07/this-writing-app-will-delete-your-work-if-you-stop-typing/), [Huffington Post](http://web.archive.org/web/20170422133042/http://www.huffingtonpost.com/2016/03/07/the-most-dangerous-writing-app-is-a-terrifying-productivity-tool_n_9399844.html), and [PopSugar](https://me.popsugar.com/technology/Why-Most-Dangerous-Writing-App-Make-You-More-Productive-40420571)
 
 > The Most Dangerous Writing App is designed to get you into a state of flow.
 > If you stop typing for more than five seconds, all progress will be lost.
@@ -34,4 +34,4 @@
 
 ### Who made this?
 
-<abbr title="The Most Dangerous Writing App">MDWA</abbr> was written by [Manu Ebert](https://www.twitter.com/maebert) over two glasses of wine on a Sunday afternoon and is open source. The domain [themostdangerouswritingapp.com](themostdangerouswritingapp.com) has been acquired by [Squibler](https://www.squibler.io), who now maintain and continue to develop the app. This is the the original version of the app, which will continue to be available at [maebert.github.io/themostdangerouswritingapp](https://maebert.github.io/themostdangerouswritingapp).
+<abbr title="The Most Dangerous Writing App">MDWA</abbr> was written by [Manu Ebert](https://www.twitter.com/maebert) over two glasses of wine on a Sunday afternoon and is open source. The domain [themostdangerouswritingapp.com](http://themostdangerouswritingapp.com) has been acquired by [Squibler](https://www.squibler.io), who now maintain and continue to develop the app. This is the the original version of the app, which will continue to be available at [maebert.github.io/themostdangerouswritingapp](https://maebert.github.io/themostdangerouswritingapp).
