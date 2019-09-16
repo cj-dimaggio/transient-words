@@ -19,11 +19,12 @@ export default class Editor extends Component {
       timerId: null
     }
 
-    this.invalid_chars = [
+    this.invalid_keys = [
       'Backspace', 'Tab', 'Enter', 'Control', 'Alt', 'Meta', 'Escape',
       'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight',
-      'CapsLock', 'Shift', 'Delete', 'Home', 'End'
+      'CapsLock', 'Shift', 'Delete', 'Home', 'End', ' '
     ];
+    this.disabled_keys = ['Tab'];
     this.control_keys = ['a', 'c', 'v', 'x', 'f'];
   }
 
@@ -49,7 +50,11 @@ export default class Editor extends Component {
     const ctrl = event.ctrlKey || event.metaKey;
     const alt = event.metaKey || event.altKey;
 
-    if (this.invalid_chars.includes(key) || event.repeat) return;
+    if (this.disabled_keys.includes(key)) {
+      event.preventDefault();
+      return;
+    };
+    if (this.invalid_keys.includes(key) || event.repeat) return;
     if (!this.props.won && ctrl && this.control_keys.includes(key)) {
       event.preventDefault();
       return;
