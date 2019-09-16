@@ -22,7 +22,7 @@ export default class Editor extends Component {
     this.invalid_chars = [
       'Backspace', 'Tab', 'Enter', 'Control', 'Alt', 'Meta', 'Escape',
       'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight',
-      'CapsLock', 'Shift', 'Delete'
+      'CapsLock', 'Shift', 'Delete', 'Home', 'End'
     ];
     this.control_keys = ['a', 'c', 'v', 'x', 'f'];
   }
