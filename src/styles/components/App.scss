@@ -3,11 +3,11 @@
     width: 100%;
     max-width: 600px;
     margin: 0px auto;
-
     height: calc(100% - 1px);
     margin: 0px auto;
     padding-top: 1px;
     }
+
 
 .app
     {
@@ -48,6 +48,10 @@
         i { opacity: .2; cursor: pointer; display: inline-block;}
         i:hover { opacity: 1; }
         }
-
     }
+
+.fullscreen-enabled .app {
+    border-radius: calc(1vw + 1vh);
+}
+
 
