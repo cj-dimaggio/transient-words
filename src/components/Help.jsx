@@ -166,7 +166,7 @@ export default class Help extends React.Component {
         <p>
           If you would like to write about{" "}
           <abbr title="The Most Dangerous Writing App">MDWA</abbr>, please use
-          the media in the <a href="MDWA Press Kit.zip">press kit</a> provided.{" "}
+          the media in the <a href="https://maebert.github.io/themostdangerouswritingapp/assets/MDWA Press Kit.zip">press kit</a> provided.{" "}
         </p>
         <p>
           I'm happy to answer your questions over{" "}

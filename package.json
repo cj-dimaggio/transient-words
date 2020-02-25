@@ -1,7 +1,7 @@
 {
   "name": "mdwa",
   "version": "2.4.2",
-  "homepage": "https://maebert.github.io/themostdangerouswritingapp",
+  "homepage": "https://maebert.github.io/themostdangerouswritingapp/",
   "private": true,
   "dependencies": {
     "autoprefixer": "7.1.6",

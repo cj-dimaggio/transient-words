@@ -21,8 +21,9 @@ const App = (props) => {
 export default class MDWA extends Component {
   render() {
     return (
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <Route path="/" exact component={Welcome} />
+        <Route path="/assets/*" onEnter={() => window.location.reload()} />
         <Route path="/write" component={App} />
         <Route path="/help" component={Help} />
       </Router>
