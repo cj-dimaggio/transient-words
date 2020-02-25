@@ -18,8 +18,8 @@ const renderQuote = ({ text, author, url }) => {
   );
 };
 
-const Help = () => {
-  const quotes = [
+export default class Help extends React.Component {
+  static quotes = [
     {
       text: "Sadistic [and] brutal.",
       author: "WIRED",
@@ -40,6 +40,11 @@ const Help = () => {
     }
   ];
 
+  componentDidMount() {
+    if (window.plausible) window.plausible('Help')
+  }
+
+  render() {
   return (
     <div className="Help">
       <Link to="/" className="navButton backButton">
@@ -118,7 +123,7 @@ const Help = () => {
           , and many, many other outlets. Here's what some people have to say:
         </p>
 
-        {quotes.map(quote => renderQuote(quote))}
+        {Help.quotes.map(quote => renderQuote(quote))}
 
         <h2>Who made this?</h2>
         <p>
@@ -184,6 +189,6 @@ const Help = () => {
       </div>
     </div>
   );
+}
 };
 
-export default Help;
