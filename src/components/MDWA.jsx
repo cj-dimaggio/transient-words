@@ -22,8 +22,9 @@ export default class MDWA extends Component {
   render() {
     return (
       <Router basename={process.env.PUBLIC_URL}>
-        <Route path="/" exact component={Welcome} />
+        <Route path="/manifest.json" onEnter={() => window.location.reload()} />
         <Route path="/assets/*" onEnter={() => window.location.reload()} />
+        <Route path="/" exact component={Welcome} />
         <Route path="/write" component={App} />
         <Route path="/help" component={Help} />
       </Router>
