@@ -17,7 +17,7 @@
     background: $white;
     color: $grey;
     font-weight: 400;
-    transition: box-shadow .1s ease-in;
+    transition: all .1s ease-in;
     &.danger {
         box-shadow: inset 0px 0px 40px 2px $red;
         transition: box-shadow 3s ease-in;
@@ -45,8 +45,9 @@
         right: 20px;
         z-index: 100;
         font-size: $reg;
-        i { opacity: .2; cursor: pointer; display: inline-block;}
-        i:hover { opacity: 1; }
+        text-align: end;
+        * { opacity: .2; cursor: pointer; display: inline-block; margin-bottom: 5px; }
+        *:hover { opacity: 1; }
         }
     }
 

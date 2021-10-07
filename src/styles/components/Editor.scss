@@ -22,13 +22,20 @@
         caret-color: red;
         font-size: 14pt;
         resize: none;
-        transition: all .1s linear;
+        transition: all 1s linear;
         &::selection
             {
             color: white;
             background: red;
             }
         &::-webkit-scrollbar { display: none; }
+        }
+
+    &.fade-out textarea
+        {
+            transition: all 4s linear;
+            filter: blur(4px);
+            opacity: 0;
         }
 
     &.danger textarea
@@ -39,9 +46,15 @@
         }
 
 
-    &.hardcore textarea:not(:empty)
+    &.hardcore textarea.active
         {
-        filter: blur(8px);
+        filter: blur(6px);
+        }
+
+    &.fade-out.hardcore textarea
+        {
+            transition: all 3s linear;
+            filter: blur(10px);
         }
 
     .hardcore

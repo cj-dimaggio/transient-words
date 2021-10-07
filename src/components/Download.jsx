@@ -1,32 +1,26 @@
 import React from 'react';
 import FileSaver from 'file-saver';
-import {AppContext} from './AppContext';
+import SettingsContext from './SettingsContext';
 
-export default class Download extends React.Component {
-  constructor(props) {
-    super(props);
-    this.download = this.download.bind(this);
-  }
+export default ({ entries, text }) => {
+  const settings = React.useContext(SettingsContext);
 
-  download () {
-    const firstLine = this.props.text.replace(/[",.!-::']/g , "");
-    const length = firstLine.indexOf(" ", 25);
-    const title = firstLine.substr(0, length > 0 ? length : 30);
+  const download = () => {
+    if (settings.isForgetting || (!text && !entries.length)) {
+      return;
+    }
+
     const date = new Date().toLocaleDateString();
+
+    const raw = [...entries, text].join('\n\n~~~\n\n');
     // Replace clean newlines with windows evil
-    const text = this.props.text.replace(/([^\r])\n/g, "$1\r\n");
-    const blob = new Blob([text], {type: "text/plain;charset=utf-8"});
-    const filename = `${title} (MDWA ${date}).txt`;
+    const final = raw.replace(/([^\r])\n/g, "$1\r\n");
+    const blob = new Blob([final], {type: "text/plain;charset=utf-8"});
+    const filename = `transient-words-${date}.txt`;
     FileSaver.saveAs(blob, filename);
   }
 
-  render() {
-    return (
-      <AppContext.Consumer>
-      { ({words}) =>
-        <button onClick={this.download} className="tiny ghost">Download { words || 0 } { words === 1 ? "word" : "words" }</button>
-      }
-      </AppContext.Consumer>
-    )
-  }
+  return (
+    <button onClick={download} className="tiny ghost">Download All Entries</button>
+  )
 }
