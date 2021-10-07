@@ -22,7 +22,7 @@
         caret-color: red;
         font-size: 14pt;
         resize: none;
-        transition: all 1s linear;
+        transition: all 1s linear, font-size 0s none;
         &::selection
             {
             color: white;
