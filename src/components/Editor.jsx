@@ -11,6 +11,8 @@ const hidden_keys = [
 
 const bufferTime = 1000;
 const transitionTime = 4100;
+const hardcoreBufferTime = 500;
+const hardcoreTransitionTime = 3100;
 
 export default ({ onTimeUp, setText }) => {
   const editorRef = React.useRef();
@@ -19,6 +21,9 @@ export default ({ onTimeUp, setText }) => {
   const settings = React.useContext(SettingsContext);
 
   const [fadeOut, setFadeOut] = React.useState(false);
+  const [lastLetter, setLastLetter] = React.useState('');
+  const [lastLetterTimer, setLastLetterTimer] = React.useState();
+  const [active, setActive] = React.useState(false);
 
   const [scrollState, setScrollState] = React.useState({ cutTop: false, cutBottom: false });
   const onScroll = (event) => {
@@ -44,6 +49,10 @@ export default ({ onTimeUp, setText }) => {
 
     clearTimeout(countDown);
     setFadeOut(false);
+    setLastLetter(key);
+    setActive(true)
+    clearTimeout(lastLetterTimer);
+    setLastLetterTimer(setTimeout(() => setLastLetter(''), 200))
 
     setCountDown(setTimeout(() => {
       setFadeOut(true);
@@ -55,8 +64,9 @@ export default ({ onTimeUp, setText }) => {
         inputRef.current.value = '';
         setText('');
         setFadeOut(false);
-      }, transitionTime));
-    }, bufferTime));
+        setActive(false)
+      }, settings.isSingleLetterMode ? hardcoreTransitionTime : transitionTime));
+    }, settings.isSingleLetterMode ? hardcoreBufferTime : bufferTime));
   }
 
   const onChange = (event) => {
@@ -66,6 +76,7 @@ export default ({ onTimeUp, setText }) => {
     if (text === '') {
       clearTimeout(countDown);
       setFadeOut(false);
+      setActive(false);
     }
   }
   
@@ -74,13 +85,16 @@ export default ({ onTimeUp, setText }) => {
     className={classNames('editor', {
       'cut-top': scrollState.cutTop,
       'cut-bottom': scrollState.cutBottom,
+      hardcore: settings.isSingleLetterMode,
       'fade-out': fadeOut
     })}
     ref={editorRef}
     >
+      {settings.isSingleLetterMode && <div className="hardcore" >{lastLetter}</div> }
       <textarea
-        placeholder="Type here..."
-        spellCheck={settings.isSpellCheck}
+        className={classNames({ active })}
+        placeholder="Start typing..."
+        spellCheck={false}
         onScroll={onScroll}
         onKeyDown={onKeyDown}
         ref={inputRef}

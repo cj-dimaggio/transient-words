@@ -30,8 +30,6 @@ export default () => {
               <br/>
               <ToggleButton value={settings.isSingleLetterMode} setValue={settings.setSingleLetterMode} label="Single Letter Mode"/>
               <br/>
-              <ToggleButton value={settings.isSpellCheck} setValue={settings.setSpellCheck} label="Spellcheck"/>
-              <br/>
               <ToggleButton value={settings.isForgetting} setValue={settings.setForgetting} label="Forget Entries"/>
             </div>
 

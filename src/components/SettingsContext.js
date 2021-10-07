@@ -9,8 +9,6 @@ export default React.createContext({
   setNightMode: noop,
   isSingleLetterMode: false,
   setSingleLetterMode: noop,
-  isSpellCheck: false,
-  setSpellCheck: noop,
   isForgetting: false,
   setForgetting: noop
 });
@@ -19,7 +17,6 @@ export const useSettings = () => {
   const [isFullScreen, setFullScreen] = React.useState(false);
   const [isNightMode, setNightMode] = React.useState(false);
   const [isSingleLetterMode, setSingleLetterMode] = React.useState(false);
-  const [isSpellCheck, setSpellCheck] = React.useState(false);
   const [isForgetting, setForgetting] = React.useState(false);
 
   return {
@@ -29,8 +26,6 @@ export const useSettings = () => {
     setNightMode,
     isSingleLetterMode,
     setSingleLetterMode,
-    isSpellCheck,
-    setSpellCheck,
     isForgetting,
     setForgetting
   }
