@@ -1,9 +1,12 @@
 import React from 'react';
 import FileSaver from 'file-saver';
+import SettingsContext from './SettingsContext';
 
 export default ({ entries, text }) => {
+  const settings = React.useContext(SettingsContext);
+
   const download = () => {
-    if (!text && !entries.length) {
+    if (settings.isForgetting || (!text && !entries.length)) {
       return;
     }
 
