@@ -16,7 +16,7 @@ export default ({ entries, text }) => {
     // Replace clean newlines with windows evil
     const final = raw.replace(/([^\r])\n/g, "$1\r\n");
     const blob = new Blob([final], {type: "text/plain;charset=utf-8"});
-    const filename = `ephemeral-${date}.txt`;
+    const filename = `transient-words-${date}.txt`;
     FileSaver.saveAs(blob, filename);
   }
 

@@ -1,7 +1,7 @@
 {
-  "name": "mdwa",
-  "version": "2.5.1",
-  "homepage": "https://maebert.github.io/themostdangerouswritingapp/",
+  "name": "transient-words",
+  "version": "1.0.0",
+  "homepage": "https://cj-dimaggio.github.io/transient-words/",
   "private": true,
   "dependencies": {
     "autoprefixer": "7.1.6",
