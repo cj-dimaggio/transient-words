@@ -30,6 +30,10 @@ html, body { height: 100%; margin: 0px; padding: 0px; }
             color: $white;
             }
         }
+
+    &.night-mode.ghost {
+        color: $white;
+    }
 }
 
 

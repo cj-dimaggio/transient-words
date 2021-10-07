@@ -1,6 +1,7 @@
 import React from 'react';
 import FileSaver from 'file-saver';
 import SettingsContext from './SettingsContext';
+import classNames from 'classnames';
 
 export default ({ entries, text }) => {
   const settings = React.useContext(SettingsContext);
@@ -21,6 +22,6 @@ export default ({ entries, text }) => {
   }
 
   return (
-    <button onClick={download} className="tiny ghost">Download All Entries</button>
+    <button onClick={download} className={classNames("tiny ghost", { 'night-mode': settings.isNightMode })}>Download All Entries</button>
   )
 }
