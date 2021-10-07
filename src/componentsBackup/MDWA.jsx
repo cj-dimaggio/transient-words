@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import Welcome from './Welcome';
-import Help from './Help';
 import WritingApp from './App';
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -24,9 +22,7 @@ export default class MDWA extends Component {
       <Router basename={process.env.PUBLIC_URL}>
         <Route path="/manifest.json" onEnter={() => window.location.reload()} />
         <Route path="/assets/*" onEnter={() => window.location.reload()} />
-        <Route path="/" exact component={Welcome} />
-        <Route path="/write" component={App} />
-        <Route path="/help" component={Help} />
+        <Route path="/" exact component={App} />
       </Router>
     )
   }
