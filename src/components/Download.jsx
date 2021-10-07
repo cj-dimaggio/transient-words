@@ -1,23 +1,23 @@
 import React from 'react';
 import FileSaver from 'file-saver';
 
-export default ({ entries, setEntries }) => {
+export default ({ entries, text }) => {
   const download = () => {
-    if (!entries.length) {
+    if (!text && !entries.length) {
       return;
     }
 
     const date = new Date().toLocaleDateString();
 
-    const rawText = entries.join('\n\n~~~\n\n');
+    const raw = [...entries, text].join('\n\n~~~\n\n');
     // Replace clean newlines with windows evil
-    const text = rawText.replace(/([^\r])\n/g, "$1\r\n");
-    const blob = new Blob([text], {type: "text/plain;charset=utf-8"});
-    const filename = `ephemeral-${date}).txt`;
+    const final = raw.replace(/([^\r])\n/g, "$1\r\n");
+    const blob = new Blob([final], {type: "text/plain;charset=utf-8"});
+    const filename = `ephemeral-${date}.txt`;
     FileSaver.saveAs(blob, filename);
   }
 
   return (
-    <button onClick={download} className="tiny ghost">Download Previous Entries</button>
+    <button onClick={download} className="tiny ghost">Download All Entries</button>
   )
 }

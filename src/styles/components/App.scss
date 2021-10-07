@@ -45,8 +45,9 @@
         right: 20px;
         z-index: 100;
         font-size: $reg;
-        i { opacity: .2; cursor: pointer; display: inline-block;}
-        i:hover { opacity: 1; }
+        text-align: end;
+        * { opacity: .2; cursor: pointer; display: inline-block; margin-bottom: 5px; }
+        *:hover { opacity: 1; }
         }
     }
 

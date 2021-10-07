@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import SettingsContext from './SettingsContext';
 
 const disabled_keys = ['Tab'];
 const hidden_keys = [
@@ -9,11 +10,13 @@ const hidden_keys = [
 ];
 
 const bufferTime = 1000;
-const transitionTime = 5100;
+const transitionTime = 4100;
 
-export default ({ onTimeUp }) => {
+export default ({ onTimeUp, setText }) => {
   const editorRef = React.useRef();
   const inputRef = React.useRef();
+
+  const settings = React.useContext(SettingsContext);
 
   const [fadeOut, setFadeOut] = React.useState(false);
 
@@ -50,9 +53,20 @@ export default ({ onTimeUp }) => {
         }
 
         inputRef.current.value = '';
+        setText('');
         setFadeOut(false);
       }, transitionTime));
     }, bufferTime));
+  }
+
+  const onChange = (event) => {
+    const text = event.target.value;
+    setText(text);
+
+    if (text === '') {
+      clearTimeout(countDown);
+      setFadeOut(false);
+    }
   }
   
   return (
@@ -65,11 +79,12 @@ export default ({ onTimeUp }) => {
     ref={editorRef}
     >
       <textarea
-        placeholder="Start typing..."
-        spellCheck={false}
+        placeholder="Type here..."
+        spellCheck={settings.isSpellCheck}
         onScroll={onScroll}
         onKeyDown={onKeyDown}
         ref={inputRef}
+        onChange={onChange}
       ></textarea>
     </div>
   )
