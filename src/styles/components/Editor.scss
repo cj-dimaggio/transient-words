@@ -22,7 +22,7 @@
         caret-color: red;
         font-size: 14pt;
         resize: none;
-        transition: all 1s linear, font-size 0s none;
+        transition: filter .5s linear, opacity .5s linear;
         &::selection
             {
             color: white;
@@ -33,7 +33,7 @@
 
     &.fade-out textarea
         {
-            transition: all 4s linear;
+            transition: all 3s linear;
             filter: blur(4px);
             opacity: 0;
         }
@@ -48,12 +48,11 @@
 
     &.hardcore textarea.active
         {
-        filter: blur(6px);
+        filter: blur(4px);
         }
 
     &.fade-out.hardcore textarea
         {
-            transition: all 3s linear;
             filter: blur(10px);
         }
 

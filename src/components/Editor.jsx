@@ -10,9 +10,7 @@ const hidden_keys = [
 ];
 
 const bufferTime = 1000;
-const transitionTime = 4100;
-const hardcoreBufferTime = 500;
-const hardcoreTransitionTime = 3100;
+const transitionTime = 3100;
 
 export default ({ onTimeUp, setText }) => {
   const editorRef = React.useRef();
@@ -65,8 +63,8 @@ export default ({ onTimeUp, setText }) => {
         setText('');
         setFadeOut(false);
         setActive(false)
-      }, settings.isSingleLetterMode ? hardcoreTransitionTime : transitionTime));
-    }, settings.isSingleLetterMode ? hardcoreBufferTime : bufferTime));
+      }, transitionTime));
+    }, bufferTime));
   }
 
   const onChange = (event) => {
