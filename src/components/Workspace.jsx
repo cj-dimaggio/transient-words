@@ -23,14 +23,11 @@ export default () => {
       <FullScreen enabled={settings.isFullScreen}>
           <div className={classNames('app', {'night-mode': settings.isNightMode})}>
             <div className="buttons">
+              <Download entries={entries} text={text} />
+              <ToggleButton value={settings.isSingleLetterMode} setValue={settings.setSingleLetterMode} label="Single Letter Mode"/>
+              <ToggleButton value={settings.isForgetting} setValue={settings.setForgetting} label="Forget Entries"/>
               <i className="icon-night-mode" onClick={() => settings.setNightMode(!settings.isNightMode)}></i>
               <i className="icon-fullscreen" onClick={() => settings.setFullScreen(!settings.isFullScreen)}></i>
-              <br/>
-              <Download entries={entries} text={text} />
-              <br/>
-              <ToggleButton value={settings.isSingleLetterMode} setValue={settings.setSingleLetterMode} label="Single Letter Mode"/>
-              <br/>
-              <ToggleButton value={settings.isForgetting} setValue={settings.setForgetting} label="Forget Entries"/>
             </div>
 
             <div className="content">
